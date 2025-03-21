@@ -1,0 +1,44 @@
+---
+name: idos_ppp
+channels: [conda-forge, r, nodefaults]
+dependencies:
+  - python ==3.12
+  - pip >=21.1
+
+  # Development dependencies
+  - conda-lock
+  - ipykernel
+  - jupyterlab
+  - pre-commit
+
+  # Language agnostic template project dependencies
+  - pytask >=0.5.0
+  - pytask-latex >=0.4.2
+  - pytask-parallel >=0.5.0
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+
+  # Python template project dependencies
+  - statsmodels
+  - numpy
+  - pandas >=2.2
+  - plotly >=5.2.0,<6
+  - pyarrow >= 13.0  # Added
+  - pygraphviz  # Added
+  - scikit-learn  # Added
+  - scipy  # Added
+  - seaborn  # Added
+  - matplotlib  # Added
+  - numba  # Added
+  - openpyxl  # Added
+  - toml  # Added
+  - line_profiler  # Added
+  - snakeviz  # Added
+
+  # additonal dependencies
+  - pytask-r >=0.4.1
+  - pyreadr
+
+  # Install project
+  - pip: [-e ., pdbp, kaleido, fides]
