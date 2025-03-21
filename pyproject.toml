@@ -15,7 +15,7 @@ keywords = [
 ]
 classifiers = [
     "Intended Audience :: Science/Research",
-    # "License :: OSI Approved :: Universität Bonn License",
+    # "License :: OSI Approved :: IDOS (German Institute of Development and Sustainability) License",
     "License :: OSI Approved :: MIT License",
     "Operating System :: MacOS :: MacOS X",
     "Operating System :: Microsoft :: Windows",
@@ -35,13 +35,13 @@ file = "README.md"
 content-type = "text/markdown"
 
 [project.license]
-text = "Universität Bonn"
+text = "IDOS (German Institute of Development and Sustainability)"
 
 [project.urls]
-Changelog = "https://github.com/iame-uni-bonn/final-project-sergeimolinari"
-Documentation = "https://github.com/iame-uni-bonn/final-project-sergeimolinari"
-Github = "https://github.com/iame-uni-bonn/final-project-sergeimolinari"
-Tracker = "https://github.com/iame-uni-bonn/final-project-sergeimolinari/issues"
+Changelog = "https://github.com/sergeimolinari/IDOS-PPP"
+Documentation = "https://github.com/sergeimolinari/IDOS-PPP"
+Github = "https://github.com/sergeimolinari/IDOS-PPP"
+Tracker = "https://github.com/sergeimolinari/IDOS-PPP/issues"
 
 # ======================================================================================
 # Build system configuration
