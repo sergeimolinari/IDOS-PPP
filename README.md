@@ -1,6 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/RN_okVXh)
 
-# Final Project Sergei Molinari: *Exploring the 3P Index: Data-Driven Insights for the MENA Team*
+# *Exploring the 3P Index: Data-Driven Insights for the MENA Team*
 
 # Description
 
@@ -17,7 +17,7 @@
   collected and processed data for 154 countries over a 12-year period (2007–2019). This
   work has resulted in a dataset designed to evaluate each country’s performance
   concerning social contracts. The dataset is structured to include indicators for the
-  "3P" indexes(Protection, Provision, Participation), with each indicator standardized
+  "3P" indexes (Protection, Provision, Participation), with each indicator standardized
   to a 0–1 scale and weighted based on its relevance to the respective index.
 
 # Objectives
