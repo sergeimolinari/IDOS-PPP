@@ -50,4 +50,4 @@ docs_template/scripts/latex/*.png
 
 # work_in_here
 work_in_here*
-work_in_here/idos*
+src/idos_ppp/data_management/try*
