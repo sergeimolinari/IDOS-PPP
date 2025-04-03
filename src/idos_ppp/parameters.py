@@ -66,3 +66,94 @@ missing_countries = pd.DataFrame(
         ],  # Replace with actual continent names if different
     }
 )
+
+#### LISTS OF COUNTRIES
+
+# Latin America and the Caribbean
+latin_america_caribbean = [
+    "Antigua and Barbuda", "Argentina", "Aruba", "Bahamas", "Barbados",
+    "Belize", "Bolivia", "Brazil", "British Virgin Islands", "Cayman Islands",
+    "Chile", "Colombia", "Costa Rica", "Cuba", "Curacao", "Dominica",
+    "Dominican Republic", "Ecuador", "El Salvador", "Grenada", "Guatemala",
+    "Guyana", "Haiti", "Honduras", "Jamaica", "Mexico", "Nicaragua", "Panama",
+    "Paraguay", "Peru", "Puerto Rico", "Sint Maarten (Dutch part)",
+    "St. Kitts and Nevis", "St. Lucia", "St. Martin (French part)",
+    "St. Vincent and the Grenadines", "Suriname", "Trinidad and Tobago",
+    "Turks and Caicos Islands", "Uruguay", "Venezuela", "Virgin Islands (U.S.)"
+]
+
+# South Asia
+south_asia = [
+    "Afghanistan", "Bangladesh", "Bhutan", "India", "Maldives", "Nepal",
+    "Pakistan", "Sri Lanka"
+]
+
+# East Asia and Pacific
+east_asia_pacific = [
+    "American Samoa", "Brunei Darussalam", "Cambodia", "China", "Fiji",
+    "French Polynesia", "Guam", "Hong Kong SAR, China", "Indonesia", "Japan",
+    "Kiribati", "Korea, Dem. People's Rep.", "Korea, Rep.", "Lao PDR",
+    "Macao SAR, China", "Malaysia", "Marshall Islands", "Micronesia, Fed. Sts.",
+    "Mongolia", "Myanmar", "Nauru", "New Caledonia", "Northern Mariana Islands",
+    "Palau", "Papua New Guinea", "Philippines", "Samoa", "Singapore",
+    "Solomon Islands", "Taiwan, China", "Thailand", "Timor-Leste", "Tonga",
+    "Tuvalu", "Vanuatu", "Vietnam"
+]
+
+# Middle East and North Africa
+middle_east_north_africa = [
+    "Algeria", "Bahrain", "Djibouti", "Egypt, Arab Rep.", "Iran, Islamic Rep.",
+    "Iraq", "Jordan", "Kuwait", "Lebanon", "Libya", "Morocco", "Oman", "Qatar",
+    "Saudi Arabia", "Sudan", "Syrian Arab Republic", "Tunisia", "Turkey",
+    "United Arab Emirates", "West Bank and Gaza", "Yemen, Rep."
+]
+
+# Sub-Saharan Africa
+sub_saharan_africa = [
+    "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cabo Verde",
+    "Cameroon", "Central African Republic", "Chad", "Comoros", "Congo, Dem. Rep.",
+    "Congo, Rep", "Côte d'Ivoire", "Equatorial Guinea", "Eritrea", "Eswatini",
+    "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau",
+    "Kenya", "Lesotho", "Liberia", "Madagascar", "Malawi", "Mali", "Mauritania",
+    "Mauritius", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda",
+    "São Tomé and Principe", "Senegal", "Seychelles", "Sierra Leone", "Somalia",
+    "South Africa", "South Sudan", "Tanzania", "Togo", "Uganda", "Zambia", "Zimbabwe"
+]
+
+# Sub-Saharan Africa excluding four positive outliers
+ssa_excluding_outliers = [
+    country for country in sub_saharan_africa
+    if country not in {"Botswana", "Mauritius", "Seychelles", "South Africa"}
+]
+
+# European Union
+european_union = [
+    "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark",
+    "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland",
+    "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland",
+    "Portugal", "Romania", "Slovak Republic", "Slovenia", "Spain", "Sweden"
+]
+
+# Other Western Europe and Western Off-springs
+other_western = [
+    "Australia", "Canada", "Iceland", "Israel", "New Zealand", "Norway",
+    "Switzerland", "United Kingdom", "United States"
+]
+
+# Other Eastern Europe
+other_eastern_europe = [
+    "Albania", "Armenia", "Belarus", "Bosnia and Herzegovina", "Georgia",
+    "Greenland", "Kosovo", "Azerbaijan", "Moldova", "Montenegro", "North Macedonia",
+    "Russian Federation", "Serbia", "Ukraine"
+]
+
+# Central Asia
+central_asia = [
+    "Kazakhstan", "Kyrgyz Republic", "Tajikistan", "Turkmenistan", "Uzbekistan"
+]
+
+# Not Included Anywhere Because Too Small
+too_small_regions = [
+    "Andorra", "Channel Islands", "Faroe Islands", "Gibraltar", "Isle of Man",
+    "Liechtenstein", "Monaco", "San Marino"
+]
