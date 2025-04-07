@@ -5,13 +5,13 @@
 # NEXT STEPS
 
 - Update meeting 2/4/25
-Markus has changed the dataset with new observations and cutting out some countries (9 countries)
-Focus on questions/doubts
-Focus on regions, especially MENA countries
-Obtain analysis and data visualization from new dataset
-GOAL -> Publish new dataset with 1/2 interesting results
-
-How revolutions changed indicators -> difference between years (RDD and DiD) -> there are differences in sheet “PROT” from column Q (in green extreme changes) -> observations and maybe motivation 
+Markus has changed the dataset with new observations and cutting out some countries (9 countries).
+Focus on questions/doubts.
+Focus on regions, especially MENA countries.
+Obtain analysis and data visualization from new dataset.
+Compare analysis results for same countries as relevant papers (e.g. Bahrain, Oman, ...).
+GOAL -> Publish new dataset with 1/2 interesting results.
+How revolutions changed indicators -> difference between years (RDD and DiD) -> there are differences in sheet “PROT” from column Q (in green extreme changes) -> observations and maybe motivation .
 
 - Before THE meeting on 13/5 (brainstorming in order to narrow down 1/2 areas of interest for the paper):
 Now that the reproducible research is set, one can easily work with the managed/cleaned dataset to obtain and compare several results.
