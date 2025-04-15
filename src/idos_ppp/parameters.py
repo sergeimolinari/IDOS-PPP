@@ -157,3 +157,25 @@ too_small_regions = [
     "Andorra", "Channel Islands", "Faroe Islands", "Gibraltar", "Isle of Man",
     "Liechtenstein", "Monaco", "San Marino"
 ]
+
+# Conflic / Post-conflict (from Heydemann 2025)
+conflict_countries = [
+    "Libya", "Syrian Arab Republic", "Yemen, Rep."
+]
+
+conflict_and_postconflict = [
+    "Iraq", "Lebanon", "Libya", "Syrian Arab Republic", "Yemen, Rep."
+]
+
+# GCC countries (and repressive ones) (from Heydemann 2025)
+gcc_high_income_countries = [
+    "Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia", "United Arab Emirates"
+]
+
+repressive_countries = [
+    "Egypt, Arab Rep.", "Jordan", "Morocco", "Tunisia"
+] # Tunisia post-2020
+
+gcc_and_repressive_countries = [
+    "Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia", "United Arab Emirates", "Egypt, Arab Rep.", "Jordan", "Morocco", "Tunisia"
+] # Tunisia post-2020
