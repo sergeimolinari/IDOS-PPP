@@ -4,6 +4,7 @@
 
 # NEXT STEPS
 
+- Countries to leave out: Belarus (left out because data missing for provision index), Eswatini (left out because data missing for protection and provision index), Gabon (left out because data missing for provision index), Iraq (left out because data missing for provision index), Papua New Guinea (left out because data missing for provision index), South Sudan (left out because country has come into being during the period 2007-19), Sudan (left out because data missing for provision index), Uzbekistan (left out because data missing for provision index).
 - Update meeting 2/4/25
 Markus has changed the dataset with new observations and cutting out some countries (9 countries).
 Focus on questions/doubts.
