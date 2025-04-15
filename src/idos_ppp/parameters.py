@@ -179,3 +179,27 @@ repressive_countries = [
 gcc_and_repressive_countries = [
     "Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia", "United Arab Emirates", "Egypt, Arab Rep.", "Jordan", "Morocco", "Tunisia"
 ] # Tunisia post-2020
+
+# Countries to leave out
+countries_to_leave_out = [
+    "Belarus",
+    "Eswatini",
+    "Gabon",
+    "Iraq",
+    "Papua New Guinea",
+    "South Sudan",
+    "Sudan",
+    "Uzbekistan"
+]
+
+countries_to_leave_out_due_to_provision = [
+    "Belarus",
+    "Eswatini",
+    "Gabon",
+    "Iraq",
+    "Papua New Guinea",
+    "Sudan",
+    "Uzbekistan"
+]
+
+countries_to_leave_out_due_to_protection = ["Eswatini"]
