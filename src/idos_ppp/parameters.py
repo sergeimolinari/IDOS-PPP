@@ -161,11 +161,11 @@ too_small_regions = [
 # Conflic / Post-conflict (from Heydemann 2025)
 conflict_countries = [
     "Libya", "Syrian Arab Republic", "Yemen, Rep."
-]
+] # Only Yemen as Libya and Syrian Arab Republic are not part of our dataset
 
 conflict_and_postconflict = [
     "Iraq", "Lebanon", "Libya", "Syrian Arab Republic", "Yemen, Rep."
-]
+] # We left out Iraq because of the data missing for provision index
 
 # GCC countries (and repressive ones) (from Heydemann 2025)
 gcc_high_income_countries = [
