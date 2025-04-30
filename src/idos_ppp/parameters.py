@@ -163,7 +163,7 @@ conflict_countries = [
     "Libya", "Syrian Arab Republic", "Yemen, Rep."
 ] # Only Yemen as Libya and Syrian Arab Republic are not part of our dataset
 
-conflict_and_postconflict = [
+conflict_and_postconflict_countries = [
     "Iraq", "Lebanon", "Libya", "Syrian Arab Republic", "Yemen, Rep."
 ] # We left out Iraq because of the data missing for provision index
 
@@ -179,6 +179,15 @@ repressive_countries = [
 gcc_and_repressive_countries = [
     "Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia", "United Arab Emirates", "Egypt, Arab Rep.", "Jordan", "Morocco", "Tunisia"
 ] # Tunisia post-2020
+
+country_lists = {
+    "conflict_countries": conflict_countries,
+    "conflict_and_postconflict_countries": conflict_and_postconflict_countries,
+    "gcc_high_income_countries": gcc_high_income_countries,
+    "repressive_countries": repressive_countries,
+    "gcc_and_repressive_countries": gcc_and_repressive_countries
+    }   # (from Heydemann 2025)
+
 
 # Countries to leave out
 countries_to_leave_out = [

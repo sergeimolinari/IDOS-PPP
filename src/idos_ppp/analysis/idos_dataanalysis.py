@@ -4,6 +4,28 @@ pd.options.mode.copy_on_write = True
 pd.options.future.infer_string = True
 pd.options.plotting.backend = "plotly"
 
+# Create filtered datasets for lists of countries
+def process_and_save_country_list(raw, country_list):
+    """
+    Filter the DataFrame for a given list of countries.
+    Arguments: - raw pd.DataFrame - The raw DataFrame to clean.
+               - country_list: list - The list of country names to filter the DataFrame.
+    
+    Returns:
+    pd.DataFrame: the filtered DataFrame.
+    """
+    # Reset the index to access the 'country_name' column
+    reset_index_df = raw.reset_index()
+
+    # Filter the DataFrame based on the country list
+    filtered_df = reset_index_df[reset_index_df['country_name'].isin(country_list)]
+
+    # Set the index back to 'country_alpha3' and 'year'
+    filtered_df = filtered_df.set_index(['country_alpha3', 'year'])
+
+    return filtered_df
+
+
 # Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision.
 
 
