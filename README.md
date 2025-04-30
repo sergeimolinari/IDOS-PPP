@@ -4,7 +4,7 @@
 
 # NEXT STEPS
 
-- Conflict / Post-conflict was a bit diappointing: only Yemen is part of the "conflict_countries", and Lebanon is the only other country in the "conflict_and_postconflict" list.
+- Conflict / Post-conflict was a bit diappointing: only Yemen is part of the "conflict_countries", and Lebanon is the only other country in the "conflict_and_postconflict" list -> maybe comparison between Yemen (as only Conflict Country) with Lebanon (as only Post-Conflict Country)?
 - Much more interesting with GCC and Repressive Countries since we have data for all of them.
 
 - Markus has changed the dataset with new observations and cutting out some countries (9 countries).
