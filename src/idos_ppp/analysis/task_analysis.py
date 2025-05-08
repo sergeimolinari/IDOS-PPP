@@ -9,6 +9,8 @@ pd.options.plotting.backend = "plotly"
 from idos_ppp.analysis.idos_dataanalysis import (
     calculate_yearly_prot_prov_continent_correlations,
     calculate_yearly_prot_prov_correlations,
+    calculate_yearly_prov_part_continent_correlations,
+    calculate_yearly_prov_part_correlations
 )
 from idos_ppp.analysis.idos_trends import (
     calculate_mean_by_continent,
@@ -20,9 +22,9 @@ from idos_ppp.config import BLD
 # Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision.
 
 
-def task_correlation_year(
+def task_prot_prov_correlation_year(
     merged_data=BLD / "data" / "merged_data.pkl",
-    produces=BLD / "analysis" / "yearly_correlations.arrow",
+    produces=BLD / "analysis" / "yearly_prot_prov_correlations.arrow",
 ):
     """Task to calculate yearly correlations between protection and provision."""
     data = pd.read_pickle(merged_data)
@@ -31,13 +33,34 @@ def task_correlation_year(
     yearly_correlations_df.to_feather(produces)
 
 
-def task_correlation_year_by_continent(
+def task_prot_prov_correlation_year_by_continent(
     merged_data=BLD / "data" / "merged_data.pkl",
-    produces=BLD / "analysis" / "yearly_continent_correlations.arrow",
+    produces=BLD / "analysis" / "yearly_prot_prov_continent_correlations.arrow",
 ):
     """Task to calculate yearly correlations between protection and provision by continent."""
     data = pd.read_pickle(merged_data)
     yearly_continent_df = calculate_yearly_prot_prov_continent_correlations(data)
+
+    yearly_continent_df.to_feather(produces)
+
+def task_prov_part_correlation_year(
+    merged_data=BLD / "data" / "merged_data.pkl",
+    produces=BLD / "analysis" / "yearly_prov_part_correlations.arrow",
+):
+    """Task to calculate yearly correlations between provision and participation."""
+    data = pd.read_pickle(merged_data)
+    yearly_correlations_df = calculate_yearly_prov_part_correlations(data)
+
+    yearly_correlations_df.to_feather(produces)
+
+
+def task_prov_part_correlation_year_by_continent(
+    merged_data=BLD / "data" / "merged_data.pkl",
+    produces=BLD / "analysis" / "yearly_prov_part_continent_correlations.arrow",
+):
+    """Task to calculate yearly correlations between provision and participation by continent."""
+    data = pd.read_pickle(merged_data)
+    yearly_continent_df = calculate_yearly_prov_part_continent_correlations(data)
 
     yearly_continent_df.to_feather(produces)
 
