@@ -4,28 +4,41 @@
 
 # NEXT STEPS
 
-- Conflict / Post-conflict was a bit diappointing: only Yemen is part of the "conflict_countries", and Lebanon is the only other country in the "conflict_and_postconflict" list -> maybe comparison between Yemen (as only Conflict Country) with Lebanon (as only Post-Conflict Country)?
-- Much more interesting with GCC and Repressive Countries since we have data for all of them.
-- Comparison with EU countries? Add to analysis in that case
+- Conflict / Post-conflict was a bit diappointing: only Yemen is part of the
+  "conflict_countries", and Lebanon is the only other country in the
+  "conflict_and_postconflict" list -> maybe comparison between Yemen (as only Conflict
+  Country) with Lebanon (as only Post-Conflict Country)?
 
-- Markus has changed the dataset with new observations and cutting out some countries (9 countries).
-Focus on questions/doubts.
-Focus on regions, especially MENA countries.
-Obtain analysis and data visualization from new dataset.
-Compare analysis results for same countries as relevant papers (e.g. Bahrain, Oman, ...).
-GOAL -> Publish new dataset with 1/2 interesting results.
-How revolutions changed indicators -> difference between years (RDD and DiD) -> there are differences in sheet “PROT” from column Q (in green extreme changes) -> observations and maybe motivation .
+- Much more interesting with GCC and Repressive Countries since we have data for all of
+  them.
 
-- Before THE meeting on 13/5 (brainstorming in order to narrow down 1/2 areas of interest for the paper):
-Now that the reproducible research is set, one can easily work with the managed/cleaned dataset to obtain and compare several results.
-DATA MANAGEMENT (merge regions), ANALYSIS (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit hooks
+- Comparison with EU countries?
 
-- Next paper -> development of countries over time, with an obvious focus on MENA countries (trends).
+- Markus has changed the dataset with new observations and cutting out some countries (9
+  countries). Focus on questions/doubts. Focus on regions, especially MENA countries.
+  Obtain analysis and data visualization from new dataset. Compare analysis results for
+  same countries as relevant papers (e.g. Bahrain, Oman, ...). GOAL -> Publish new
+  dataset with 1/2 interesting results. How revolutions changed indicators -> difference
+  between years (RDD and DiD) -> there are differences in sheet “PROT” from column Q (in
+  green extreme changes) -> observations and maybe motivation .
+
+- Before THE meeting on 13/5 (brainstorming in order to narrow down 1/2 areas of
+  interest for the paper): Now that the reproducible research is set, one can easily
+  work with the managed/cleaned dataset to obtain and compare several results. ANALYSIS
+  (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit hooks
+
+- Next paper -> development of countries over time, with an obvious focus on MENA
+  countries (trends).
 
 # Done
 
-- Countries to leave out: Belarus (left out because data missing for provision index), Eswatini (left out because data missing for protection and provision index), Gabon (left out because data missing for provision index), Iraq (left out because data missing for provision index), Papua New Guinea (left out because data missing for provision index), South Sudan (left out because country has come into being during the period 2007-19), Sudan (left out because data missing for provision index), Uzbekistan (left out because data missing for provision index).
-
+- Countries to leave out: Belarus (left out because data missing for provision index),
+  Eswatini (left out because data missing for protection and provision index), Gabon
+  (left out because data missing for provision index), Iraq (left out because data
+  missing for provision index), Papua New Guinea (left out because data missing for
+  provision index), South Sudan (left out because country has come into being during the
+  period 2007-19), Sudan (left out because data missing for provision index), Uzbekistan
+  (left out because data missing for provision index).
 
 # Description
 
