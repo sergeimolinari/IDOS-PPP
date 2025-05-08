@@ -20,7 +20,7 @@ from idos_ppp.parameters import country_lists
 
 # Create filtered datasets for each list of countries
 
-products = {list_name: BLD / "analysis" / f"{list_name}_data.csv" for list_name in country_lists.keys()}
+products = {list_name: BLD / "analysis" / "subsets" / f"{list_name}_data.csv" for list_name in country_lists.keys()}
 
 def task_process_and_save_country_list(
     merged_data=BLD / "data" / "merged_data.pkl",
@@ -30,7 +30,7 @@ def task_process_and_save_country_list(
     data = pd.read_pickle(merged_data)
     for list_name, country_list in country_lists.items():
         filtered_data = process_and_save_country_list(data, country_list)
-        output_csv_file_path = BLD / "analysis" / f"{list_name}_data.csv"
+        output_csv_file_path = BLD / "analysis" / "subsets" / f"{list_name}_data.csv"
         filtered_data.to_csv(output_csv_file_path) # Save the filtered DataFrame as a CSV
 
 
