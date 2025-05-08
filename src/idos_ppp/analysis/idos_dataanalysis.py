@@ -7,7 +7,7 @@ pd.options.plotting.backend = "plotly"
 # Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision.
 
 
-def calculate_yearly_correlations(data):
+def calculate_yearly_prot_prov_correlations(data):
     """Calculate the yearly correlations between protection, which serves the purpose of measuring security, and provision, described as the socio-economic measure.
 
     Arguments: - data: pd.DataFrame containing the data.
@@ -29,7 +29,7 @@ def calculate_yearly_correlations(data):
     return yearly_correlations_df
 
 
-def calculate_yearly_continent_correlations(data):
+def calculate_yearly_prot_prov_continent_correlations(data):
     """Calculate the yearly correlation between protection and provision for each continent.
 
     Arguments: - data: pd.DataFrame containing the data.

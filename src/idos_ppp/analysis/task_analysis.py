@@ -7,8 +7,8 @@ pd.options.future.infer_string = True
 pd.options.plotting.backend = "plotly"
 
 from idos_ppp.analysis.idos_dataanalysis import (
-    calculate_yearly_continent_correlations,
-    calculate_yearly_correlations,
+    calculate_yearly_prot_prov_continent_correlations,
+    calculate_yearly_prot_prov_correlations,
 )
 from idos_ppp.analysis.idos_trends import (
     calculate_mean_by_continent,
@@ -26,7 +26,7 @@ def task_correlation_year(
 ):
     """Task to calculate yearly correlations between protection and provision."""
     data = pd.read_pickle(merged_data)
-    yearly_correlations_df = calculate_yearly_correlations(data)
+    yearly_correlations_df = calculate_yearly_prot_prov_correlations(data)
 
     yearly_correlations_df.to_feather(produces)
 
@@ -37,7 +37,7 @@ def task_correlation_year_by_continent(
 ):
     """Task to calculate yearly correlations between protection and provision by continent."""
     data = pd.read_pickle(merged_data)
-    yearly_continent_df = calculate_yearly_continent_correlations(data)
+    yearly_continent_df = calculate_yearly_prot_prov_continent_correlations(data)
 
     yearly_continent_df.to_feather(produces)
 
