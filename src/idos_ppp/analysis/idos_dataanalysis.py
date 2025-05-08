@@ -4,7 +4,7 @@ pd.options.mode.copy_on_write = True
 pd.options.future.infer_string = True
 pd.options.plotting.backend = "plotly"
 
-# Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision.
+# Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision and between provision and participation.
 
 
 def calculate_yearly_prot_prov_correlations(data):

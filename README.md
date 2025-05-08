@@ -14,6 +14,8 @@
 
 - Comparison with EU countries?
 
+- Add a description for each indicator to the ReadMe file.
+
 - Markus has changed the dataset with new observations and cutting out some countries (9
   countries). Focus on questions/doubts. Focus on regions, especially MENA countries.
   Obtain analysis and data visualization from new dataset. Compare analysis results for
