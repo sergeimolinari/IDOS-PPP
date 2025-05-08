@@ -14,13 +14,13 @@ def process_and_save_country_list(raw, country_list):
     Returns:
     pd.DataFrame: the filtered DataFrame.
     """
-    # Reset the index to access the 'country_name' column
+    _fail_if_not_dataframe(raw)
+    _fail_if_empty_dataframe(raw)
+    
     reset_index_df = raw.reset_index()
 
-    # Filter the DataFrame based on the country list
     filtered_df = reset_index_df[reset_index_df['country_name'].isin(country_list)]
 
-    # Set the index back to 'country_alpha3' and 'year'
     filtered_df = filtered_df.set_index(['country_alpha3', 'year'])
 
     return filtered_df
