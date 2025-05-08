@@ -127,8 +127,8 @@ ssa_excluding_outliers = [
 ]
 
 # European Union
-european_union = [
-    "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark",
+european_union_countries = [
+    "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark",
     "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland",
     "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland",
     "Portugal", "Romania", "Slovak Republic", "Slovenia", "Spain", "Sweden"
@@ -185,7 +185,8 @@ country_lists = {
     "conflict_and_postconflict_countries": conflict_and_postconflict_countries,
     "gcc_high_income_countries": gcc_high_income_countries,
     "repressive_countries": repressive_countries,
-    "gcc_and_repressive_countries": gcc_and_repressive_countries
+    "gcc_and_repressive_countries": gcc_and_repressive_countries,
+    "european_union_countries": european_union_countries
     }   # (from Heydemann 2025)
 
 
