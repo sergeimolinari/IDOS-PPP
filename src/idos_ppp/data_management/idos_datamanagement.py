@@ -71,12 +71,12 @@ def _filter_valid_country_codes(raw_dta, country_codes):
 
 def _remove_countries_to_leave_out(raw_dta):
     """Remove observations for countries in the countries_to_leave_out list."""
-    # Create a mapping from country_name to country_alpha3
     name_to_alpha3 = raw_dta.set_index('country_name')['country_alpha3'].to_dict()
-    # Transform the list using the mapping
+    
     countries_to_leave_out_alpha3 = [name_to_alpha3[country] for country in countries_to_leave_out if country in name_to_alpha3]
-    # Filter and remove the "leave out" countries
+
     reduced_dta = raw_dta[~raw_dta['country_alpha3'].isin(countries_to_leave_out_alpha3)]
+
     return reduced_dta
 
 def _rename_columns_based_on_id(raw_dta):
@@ -190,6 +190,27 @@ def clean_and_concatenate_data(raw_data_dict, country_codes):
     reordered_df = concatenated_df[cols]
 
     return reordered_df
+
+
+def process_and_save_country_list(raw, country_list):
+    """
+    Filter the DataFrame for a given list of countries.
+    Arguments: - raw pd.DataFrame - The raw DataFrame to clean.
+               - country_list: list - The list of country names to filter the DataFrame.
+    
+    Returns:
+    pd.DataFrame: the filtered DataFrame.
+    """
+    _fail_if_not_dataframe(raw)
+    _fail_if_empty_dataframe(raw)
+    
+    reset_index_df = raw.reset_index()
+
+    filtered_df = reset_index_df[reset_index_df['country_name'].isin(country_list)]
+
+    filtered_df = filtered_df.set_index(['country_alpha3', 'year'])
+
+    return filtered_df
 
 
 # Error handling functions

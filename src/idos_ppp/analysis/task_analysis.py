@@ -7,7 +7,6 @@ pd.options.future.infer_string = True
 pd.options.plotting.backend = "plotly"
 
 from idos_ppp.analysis.idos_dataanalysis import (
-    process_and_save_country_list,
     calculate_yearly_continent_correlations,
     calculate_yearly_correlations,
 )
@@ -16,22 +15,6 @@ from idos_ppp.analysis.idos_trends import (
     calculate_statistics_by_continent,
 )
 from idos_ppp.config import BLD
-from idos_ppp.parameters import country_lists
-
-# Create filtered datasets for each list of countries
-
-products = {list_name: BLD / "analysis" / "subsets" / f"{list_name}_data.csv" for list_name in country_lists.keys()}
-
-def task_process_and_save_country_list(
-    merged_data=BLD / "data" / "merged_data.pkl",
-    produces= products,
-):
-    """Task to create datasets constrained to countries in specified lists."""
-    data = pd.read_pickle(merged_data)
-    for list_name, country_list in country_lists.items():
-        filtered_data = process_and_save_country_list(data, country_list)
-        output_csv_file_path = BLD / "analysis" / "subsets" / f"{list_name}_data.csv"
-        filtered_data.to_csv(output_csv_file_path) # Save the filtered DataFrame as a CSV
 
 
 # Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision.
@@ -81,4 +64,4 @@ def task_mean_by_continent(
     data = pd.read_pickle(merged_data)
     mean_values = calculate_mean_by_continent(data)
 
-    mean_values.to_pickle(produces)  # intermediate file
+    mean_values.to_pickle(produces)  # Intermediate file

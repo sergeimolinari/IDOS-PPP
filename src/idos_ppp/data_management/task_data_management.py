@@ -9,10 +9,13 @@ pd.options.future.infer_string = True
 pd.options.plotting.backend = "plotly"
 
 from idos_ppp.config import BLD, DATA
-from idos_ppp.data_management.idos_datamanagement import clean_and_concatenate_data
-from idos_ppp.parameters import missing_countries, sheet_names, years
+from idos_ppp.data_management.idos_datamanagement import (
+    clean_and_concatenate_data, 
+    process_and_save_country_list
+)
+from idos_ppp.parameters import missing_countries, sheet_names, years, country_lists
 
-products = {
+products_unzip = {
     "continents data": BLD
     / "data"
     / "data_continents"
@@ -27,7 +30,7 @@ products = {
 
 def task_unzip_file(
     zip_file=DATA / "continents-according-to-our-world-in-data.filtered.zip",
-    produces=products,
+    produces=products_unzip,
 ):
     output_dir = BLD / "data" / "data_continents"
 
@@ -93,3 +96,17 @@ def task_merge_data(
     merged_data_indexed = merged_df.set_index(["country_alpha3", "year"])
 
     merged_data_indexed.to_pickle(produces)
+
+
+products = {list_name: BLD / "data" / "subsets" / f"{list_name}_data.csv" for list_name in country_lists.keys()}
+
+def task_process_and_save_country_list(
+    merged_data=BLD / "data" / "merged_data.pkl",
+    produces= products,
+):
+    """Task to create datasets constrained to countries in specified lists."""
+    data = pd.read_pickle(merged_data)
+    for list_name, country_list in country_lists.items():
+        filtered_data = process_and_save_country_list(data, country_list)
+        output_csv_file_path = BLD / "data" / "subsets" / f"{list_name}_data.csv"
+        filtered_data.to_csv(output_csv_file_path) # Save the filtered DataFrame as a CSV
