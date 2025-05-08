@@ -6,7 +6,7 @@
 
 - Conflict / Post-conflict was a bit diappointing: only Yemen is part of the "conflict_countries", and Lebanon is the only other country in the "conflict_and_postconflict" list -> maybe comparison between Yemen (as only Conflict Country) with Lebanon (as only Post-Conflict Country)?
 - Much more interesting with GCC and Repressive Countries since we have data for all of them.
-- Comparison with EU contries? Add to analysis in that case
+- Comparison with EU countries? Add to analysis in that case
 
 - Markus has changed the dataset with new observations and cutting out some countries (9 countries).
 Focus on questions/doubts.
@@ -18,7 +18,7 @@ How revolutions changed indicators -> difference between years (RDD and DiD) -> 
 
 - Before THE meeting on 13/5 (brainstorming in order to narrow down 1/2 areas of interest for the paper):
 Now that the reproducible research is set, one can easily work with the managed/cleaned dataset to obtain and compare several results.
-ADDITIONAL QUESTIONS (take a look at the article), NEW DATASET, DATA MANAGEMENT (merge regions), ANALYSIS (significance, correlations, growth, …), VISUALIZATION (plots)
+DATA MANAGEMENT (merge regions), ANALYSIS (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit hooks
 
 - Next paper -> development of countries over time, with an obvious focus on MENA countries (trends).
 
