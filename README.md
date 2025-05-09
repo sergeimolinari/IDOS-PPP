@@ -29,6 +29,21 @@
   work with the managed/cleaned dataset to obtain and compare several results. ANALYSIS
   (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit hooks
 
+- Remember: Variance: Do the three indices display existing disparities between
+  different countries? -> check interval / range. Plausibility: Are the results in line
+  with possible explanations? -> values as in the figures in chapter 4.2. Consistency
+  between indices: Are the indices scaled in a consistent way? -> compare the 3 Ps
+  respective values as they cover a similar range, and their means and medians are not
+  too different. check also the correlation between each other. Consistency within
+  indices: Are the components of the three indices (the values of their aspects)
+  consistent, that is, reasonably correlated? -> check correlations of the components
+  for each 3P index. Consistency with other indices: Are the three indices in line with
+  other indices (i.e. do they fulfil the criterion of “concurrent validity”)? -> check
+  consistency with popular indicators such as per capita income and indices such as the
+  HDI or the Global Peace Index. Added value: Do the indices add information to other
+  available indicators and indices? -> check which countries are better for each 3P
+  index.
+
 - Next paper -> development of countries over time, with an obvious focus on MENA
   countries (trends).
 
@@ -41,7 +56,8 @@
   provision index), South Sudan (left out because country has come into being during the
   period 2007-19), Sudan (left out because data missing for provision index), Uzbekistan
   (left out because data missing for provision index).
-- Created sub-datasets fro Conflict/Post-Conflict countries, GCC and Repressive Countries, and EU Countries.
+- Created sub-datasets for Conflict/Post-Conflict countries, GCC and Repressive
+  Countries, and EU Countries.
 
 # Description
 
@@ -60,6 +76,41 @@
   concerning social contracts. The dataset is structured to include indicators for the
   "3P" indexes (Protection, Provision, Participation), with each indicator standardized
   to a 0–1 scale and weighted based on its relevance to the respective index.
+- The list of aspects included in each of the six elements of social contracts:
+  Protection: collective security (i) against foreign threats and (ii) against acts of
+  civil war; security of individuals/citizens (iii) against physical threats such as
+  alleged or real terrorist and criminal acts and (iv) against political threats by own
+  government; (v) human rights aspects of rule of law (including the law as such,
+  especially the existence and enforcement of human and civil rights); and (vi) security
+  against natural, environmental and other macro risks. Provision of economic and social
+  services: (i) infrastructure (communication, information, transport, utilities), (ii)
+  education, (iii) health services, (iv) social protection, (v) poverty reduction, (vi)
+  employment, (vii) economic aspects of rule of law (transparency, fair competition,
+  reliability of government regulation), (viii) a good business climate and (ix)
+  resources in production (e.g. water, land). Participation by society in political
+  decision-making by (i) free, fair and secret elections, (ii) open public debates and
+  (iii) free mass media and other channels. Citizens’ acceptance of the rule of the
+  government. Citizens’ delivery of (i) taxes and other obligations such as (ii)
+  military or civil service, (iii) respect of public order, (iv) engagement in civil
+  society (e.g. neighborly help, support for school child care) or (v) financial
+  donations to social work. Deliverables exchanged between social groups and citizens:
+  (i) mutual respect and recognition, (ii) dialogue on conflictive issues, (iii) mutual
+  support (of course, there is some overlap in contents with engagement and financial
+  donations, mentioned already in the previous element, but they also have an
+  intra-societal specification).
+- We also realized that it is difficult to find meaningful indicators for the last three
+  elements, that is, the deliverables provided by and among society in general. Some of
+  their aspects are covered by the questions included in the World Value Survey, but
+  only few of their aspects. Other databases, such as the Afrobarometer, include more
+  aspects, but they cover only a limited number of countries. For this reason, the
+  measurement of social cohesion developed by Leininger et al. (2021) currently contains
+  only data on African countries. Therefore, we decided to disregard these three
+  elements in our first move towards measuring social contracts and instead focus fully
+  on the three Ps that governments can give to society. We measure thus just the efforts
+  of one side of the social contract; we cannot yet assess how much these efforts impact
+  and depend on the deliverables of the other parties (e.g. the readiness of society to
+  pay taxes, do military service and contribute to other public goods). We plan to
+  conduct this second step in another paper.
 
 # Objectives
 
