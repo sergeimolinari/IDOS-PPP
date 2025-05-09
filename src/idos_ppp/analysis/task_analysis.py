@@ -13,8 +13,8 @@ from idos_ppp.analysis.idos_dataanalysis import (
     calculate_yearly_prov_part_correlations
 )
 from idos_ppp.analysis.idos_trends import (
-    calculate_mean_by_continent,
-    calculate_statistics_by_continent,
+    calculate_statistics,
+    calculate_mean,
 )
 from idos_ppp.config import BLD
 
@@ -70,21 +70,21 @@ def task_prov_part_correlation_year_by_continent(
 
 def task_statistics_by_continent(
     merged_data=BLD / "data" / "merged_data.pkl",
-    produces=BLD / "analysis" / "continent_statistics.csv",
+    produces=BLD / "analysis" / "statistics.csv",
 ):
-    """Task to calculate statistics by continent."""
+    """Task to calculate statistics."""
     data = pd.read_pickle(merged_data)
-    statistics = calculate_statistics_by_continent(data)
+    statistics = calculate_statistics(data)
 
     statistics.to_csv(produces)
 
 
 def task_mean_by_continent(
     merged_data=BLD / "data" / "merged_data.pkl",
-    produces=BLD / "analysis" / "continent_mean.pkl",
+    produces=BLD / "analysis" / "mean.pkl",
 ):
-    """Task to calculate mean values by continent."""
+    """Task to calculate mean values."""
     data = pd.read_pickle(merged_data)
-    mean_values = calculate_mean_by_continent(data)
+    mean_values = calculate_mean(data)
 
     mean_values.to_pickle(produces)  # Intermediate file

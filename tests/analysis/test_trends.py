@@ -2,8 +2,8 @@ import pandas as pd
 import pytest
 
 from src.idos_ppp.analysis.idos_trends import (
-    calculate_mean_by_continent,
-    calculate_statistics_by_continent,
+    calculate_statistics,
+    calculate_mean,
 )
 
 
@@ -19,28 +19,27 @@ def sample_data():
     return pd.DataFrame(data)
 
 
-def test_calculate_statistics_by_continent_expected_columns_mean(sample_data):
-    result = calculate_statistics_by_continent(sample_data)
+def test_calculate_statistics_expected_columns_mean(sample_data):
+    result = calculate_statistics(sample_data)
     assert ("protection", "mean") in result.columns
     assert ("provision", "mean") in result.columns
     assert ("participation", "mean") in result.columns
     assert not result.empty
 
 
-def test_calculate_mean_by_continent(sample_data):
-    result = calculate_mean_by_continent(sample_data)
+def test_calculate_mean(sample_data):
+    result = calculate_mean(sample_data)
     assert "year" in result.columns
-    assert "continent" in result.columns
     assert not result.empty
 
 
-def test_calculate_statistics_by_continent_error_handling(sample_data):
+def test_calculate_statistics_error_handling(sample_data):
     data_missing_year = sample_data.drop(columns=["year"])
     with pytest.raises(KeyError):
-        calculate_statistics_by_continent(data_missing_year)
+        calculate_statistics(data_missing_year)
 
 
-def test_calculate_mean_by_continent_error_handling(sample_data):
-    data_missing_continent = sample_data.drop(columns=["continent"])
+def test_calculate_mean_error_handling(sample_data):
+    data_missing_year = sample_data.drop(columns=["year"])
     with pytest.raises(KeyError):
-        calculate_mean_by_continent(data_missing_continent)
+        calculate_mean(data_missing_year)
