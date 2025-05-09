@@ -98,7 +98,7 @@ def task_merge_data(
     merged_data_indexed.to_pickle(produces)
 
 
-products = {list_name: BLD / "data" / "subsets" / f"{list_name}_data.csv" for list_name in country_lists.keys()}
+products = {list_name: BLD / "data" / "subsets" / f"{list_name}_data.pkl" for list_name in country_lists.keys()}
 
 def task_process_and_save_country_list(
     merged_data=BLD / "data" / "merged_data.pkl",
@@ -108,5 +108,5 @@ def task_process_and_save_country_list(
     data = pd.read_pickle(merged_data)
     for list_name, country_list in country_lists.items():
         filtered_data = process_and_save_country_list(data, country_list)
-        output_csv_file_path = BLD / "data" / "subsets" / f"{list_name}_data.csv"
-        filtered_data.to_csv(output_csv_file_path) # Save the filtered DataFrame as a CSV
+        output_pkl_file_path = BLD / "data" / "subsets" / f"{list_name}_data.pkl"
+        filtered_data.to_pickle(output_pkl_file_path) # Save the filtered DataFrame as a PKL file
