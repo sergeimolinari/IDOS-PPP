@@ -15,8 +15,10 @@ from idos_ppp.analysis.idos_dataanalysis import (
 from idos_ppp.analysis.idos_trends import (
     calculate_statistics,
     calculate_mean,
+    calculate_growth
 )
 from idos_ppp.config import BLD
+from idos_ppp.parameters import country_lists
 
 
 # Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision.
@@ -70,13 +72,13 @@ def task_prov_part_correlation_year_by_continent(
 
 def task_statistics_by_continent(
     merged_data=BLD / "data" / "merged_data.pkl",
-    produces=BLD / "analysis" / "statistics.csv",
+    produces=BLD / "analysis" / "statistics.arrow",
 ):
     """Task to calculate statistics."""
     data = pd.read_pickle(merged_data)
     statistics = calculate_statistics(data)
 
-    statistics.to_csv(produces)
+    statistics.to_feather(produces)
 
 
 def task_mean_by_continent(
@@ -87,4 +89,21 @@ def task_mean_by_continent(
     data = pd.read_pickle(merged_data)
     mean_values = calculate_mean(data)
 
-    mean_values.to_pickle(produces)  # Intermediate file
+    mean_values.to_pickle(produces)
+
+# Growth -> Function: Create a function to calculate the growth ration for each year.
+
+
+inputs_growth = {list_name: BLD / "data" / "subsets" / f"{list_name}_data.pkl" for list_name in country_lists.keys()}
+products_growth = {list_name: BLD / "analysis" / "subsets" / f"{list_name}_growth_data.pkl" for list_name in country_lists.keys()}
+
+def task_growth(
+    merged_data=inputs_growth,
+    produces=products_growth,
+):
+    """Task to calculate growth ratios."""
+    for list_name, data in merged_data.items():
+        data = pd.read_pickle(data)
+        growth_data = calculate_growth(data)
+        output_pkl_file_path = BLD / "analysis" / "subsets" / f"{list_name}_growth_data.pkl"
+        growth_data.to_pickle(output_pkl_file_path) # Save the filtered DataFrames as PKL files
