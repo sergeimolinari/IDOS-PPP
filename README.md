@@ -14,7 +14,7 @@
 
 - Comparison with EU countries?
 
-- Add a description for each indicator to the ReadMe file.
+- ADD TASK GROWTH IN TASK ANALYSIS -> THE FUNCTION IN idos.trends WORKS!
 
 - Markus has changed the dataset with new observations and cutting out some countries (9
   countries). Focus on questions/doubts. Focus on regions, especially MENA countries.
