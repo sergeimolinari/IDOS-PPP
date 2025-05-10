@@ -47,7 +47,7 @@ def calculate_mean(data):
 
 # Growth -> Function: Create a function to calculate the growth ration for each year.
 
-'''
+
 def calculate_growth(data):
     """Calculate the growth/degrowth of each country by dividing the value from the current year by the value from the previous year.
 
@@ -58,7 +58,25 @@ def calculate_growth(data):
     """
     _fail_if_not_dataframe(data)
     _fail_if_empty_dataframe(data)
-'''
+
+    data_3p_subset = data.sort_values(by=['country_alpha3', 'year'])
+
+    # Calculate growth ratios for each of the three columns
+    data_3p_subset['protection_growth'] = data_3p_subset.groupby('country_alpha3')['protection'].pct_change() + 1
+    data_3p_subset['provision_growth'] = data_3p_subset.groupby('country_alpha3')['provision'].pct_change() + 1
+    data_3p_subset['participation_growth'] = data_3p_subset.groupby('country_alpha3')['participation'].pct_change() + 1
+
+    # Create the new DataFrame with the required columns
+    growth_3p_data = data_3p_subset[['country_name', 'continent', 'protection_growth', 'provision_growth', 'participation_growth']].copy()
+
+    # Reset index to include country_alpha3 and year in the resulting DataFrame
+    growth_3p_data = growth_3p_data.reset_index()
+
+    # Filter out the first year (2007) as there is no previous year to compare with
+    growth_3p_data = growth_3p_data[growth_3p_data['year'] != 2007]
+
+    return growth_3p_data
+
 
 # Error handling functions
 def _fail_if_not_dataframe(data):
