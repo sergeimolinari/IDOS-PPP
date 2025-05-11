@@ -89,16 +89,16 @@ line-length = 88  # or any other value that suits your needs
 select = ["ALL"]
 extend-ignore = [
     # "ANN",  # Missing type annotations
-    "COM812", # Conflict with ruff-format
+    # "COM812", # Conflict with ruff-format
     # "D10",  # Missing docstrings
-    "ISC001", # Conflict with ruff-format
+    # "ISC001", # Conflict with ruff-format
     "PD901", # df is a great name with functional data management
     "PLR0913",  # Too many arguments in function definition
     "RET504", # Don't force to calculate upon return
     "S101",  # Use of `assert` detected.
     "S301",  # pickle module is unsafe
     "SIM108", # version tuple
-    "E501", # Line too long
+    # "E501", # Line too long
     "ERA001", # Use of `assert` detected
     "W291", # Trailing whitespace
     "PTH109", # Use of `assert` detected
