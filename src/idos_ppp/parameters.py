@@ -101,7 +101,7 @@ east_asia_pacific = [
 ]
 
 # Middle East and North Africa
-middle_east_north_africa = [
+middle_east_north_africa_countries = [
     "Algeria", "Bahrain", "Djibouti", "Egypt, Arab Rep.", "Iran, Islamic Rep.",
     "Iraq", "Jordan", "Kuwait", "Lebanon", "Libya", "Morocco", "Oman", "Qatar",
     "Saudi Arabia", "Sudan", "Syrian Arab Republic", "Tunisia", "Turkey",
@@ -186,7 +186,8 @@ country_lists = {
     "gcc_high_income_countries": gcc_high_income_countries,
     "repressive_countries": repressive_countries,
     "gcc_and_repressive_countries": gcc_and_repressive_countries,
-    "european_union_countries": european_union_countries
+    "european_union_countries": european_union_countries,
+    "middle_east_north_africa_countries": middle_east_north_africa_countries
     }   # (from Heydemann 2025)
 
 

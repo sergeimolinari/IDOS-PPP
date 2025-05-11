@@ -4,6 +4,9 @@
 
 # NEXT STEPS
 
+- MEETING ON 13/5 (brainstorming in order to narrow down 1/2 areas of
+  interest for the paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit hooks. How revolutions changed indicators -> difference between years (RDD and DiD) -> there are differences in sheet “PROT” from column Q (in green extreme changes) -> observations and maybe motivation. Maybe also boxplots for stat analysis.
+
 - Conflict / Post-conflict was a bit diappointing: only Yemen is part of the
   "conflict_countries", and Lebanon is the only other country in the
   "conflict_and_postconflict" list -> maybe comparison between Yemen (as only Conflict
@@ -12,22 +15,7 @@
 - Much more interesting with GCC and Repressive Countries since we have data for all of
   them.
 
-- Comparison with EU countries?
-
-- ADD TASK GROWTH IN TASK ANALYSIS -> THE FUNCTION IN idos.trends WORKS!
-
-- Markus has changed the dataset with new observations and cutting out some countries (9
-  countries). Focus on questions/doubts. Focus on regions, especially MENA countries.
-  Obtain analysis and data visualization from new dataset. Compare analysis results for
-  same countries as relevant papers (e.g. Bahrain, Oman, ...). GOAL -> Publish new
-  dataset with 1/2 interesting results. How revolutions changed indicators -> difference
-  between years (RDD and DiD) -> there are differences in sheet “PROT” from column Q (in
-  green extreme changes) -> observations and maybe motivation .
-
-- Before THE meeting on 13/5 (brainstorming in order to narrow down 1/2 areas of
-  interest for the paper): Now that the reproducible research is set, one can easily
-  work with the managed/cleaned dataset to obtain and compare several results. ANALYSIS
-  (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit hooks
+- Comparison between continents, MENA, EU, GCC, Repressive and Conflict/Post-Conflict Countries -> DATA VISUALIZATION
 
 - Remember: Variance: Do the three indices display existing disparities between
   different countries? -> check interval / range. Plausibility: Are the results in line
