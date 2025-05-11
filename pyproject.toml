@@ -98,7 +98,7 @@ extend-ignore = [
     "S101",  # Use of `assert` detected.
     "S301",  # pickle module is unsafe
     "SIM108", # version tuple
-    # "E501", # Line too long
+    "E501", # Line too long
     "ERA001", # Use of `assert` detected
     # "W291", # Trailing whitespace
     "PTH109", # Use of `assert` detected
