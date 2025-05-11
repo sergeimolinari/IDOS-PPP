@@ -93,8 +93,8 @@ extend-ignore = [
     # "D10",  # Missing docstrings
     # "ISC001", # Conflict with ruff-format
     "PD901", # df is a great name with functional data management
-    "PLR0913",  # Too many arguments in function definition
-    "RET504", # Don't force to calculate upon return
+    # "PLR0913",  # Too many arguments in function definition
+    # "RET504", # Don't force to calculate upon return
     "S101",  # Use of `assert` detected.
     "S301",  # pickle module is unsafe
     "SIM108", # version tuple
