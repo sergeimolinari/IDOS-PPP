@@ -100,14 +100,14 @@ extend-ignore = [
     "SIM108", # version tuple
     # "E501", # Line too long
     "ERA001", # Use of `assert` detected
-    "W291", # Trailing whitespace
+    # "W291", # Trailing whitespace
     "PTH109", # Use of `assert` detected
     "T201", # Use of `assert` detected
     "F811", # Redefining name from outer scope
     "BLE001", # Use of `assert` detected
-    "ANN201", # Missing type annotation for function
-    "D103", # Missing docstring in public method
-    "ANN001", # Missing type annotation for function
+    # "ANN201", # Missing type annotation for function
+    # "D103", # Missing docstring in public method
+    # "ANN001", # Missing type annotation for function
     "PD011", # Use of `assert` detected
 ]
 
