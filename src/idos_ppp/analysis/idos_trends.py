@@ -28,7 +28,7 @@ def calculate_statistics(data):
 
 
 def calculate_mean(data):
-    """Calculate and save the mean of key indicators across continents for each year.
+    """Calculate and save the mean of key indicators for each year.
 
     Arguments: - data: pd.DataFrame containing the data.
 
