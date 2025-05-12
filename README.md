@@ -21,20 +21,24 @@
 - Comparison between continents, MENA, EU, GCC, Repressive and Conflict/Post-Conflict
   Countries -> DATA VISUALIZATION
 
-- Remember: Variance: Do the three indices display existing disparities between
-  different countries? -> check interval / range. Plausibility: Are the results in line
-  with possible explanations? -> values as in the figures in chapter 4.2. Consistency
-  between indices: Are the indices scaled in a consistent way? -> compare the 3 Ps
-  respective values as they cover a similar range, and their means and medians are not
-  too different. check also the correlation between each other. Consistency within
-  indices: Are the components of the three indices (the values of their aspects)
-  consistent, that is, reasonably correlated? -> check correlations of the components
-  for each 3P index. Consistency with other indices: Are the three indices in line with
-  other indices (i.e. do they fulfil the criterion of “concurrent validity”)? -> check
-  consistency with popular indicators such as per capita income and indices such as the
-  HDI or the Global Peace Index. Added value: Do the indices add information to other
-  available indicators and indices? -> check which countries are better for each 3P
-  index.
+- Remember:
+
+  - Variance: Do the three indices display existing disparities between different
+    countries? -> check interval / range.
+  - Plausibility: Are the results in line with possible explanations? -> values as in
+    the figures in chapter 4.2.
+  - Consistency between indices: Are the indices scaled in a consistent way? -> compare
+    the 3 Ps respective values as they cover a similar range, and their means and
+    medians are not too different. check also the correlation between each other.
+  - Consistency within indices: Are the components of the three indices (the values of
+    their aspects) consistent, that is, reasonably correlated? -> check correlations of
+    the components for each 3P index.
+  - Consistency with other indices: Are the three indices in line with other indices
+    (i.e. do they fulfil the criterion of “concurrent validity”)? -> check consistency
+    with popular indicators such as per capita income and indices such as the HDI or the
+    Global Peace Index.
+  - Added value: Do the indices add information to other available indicators and
+    indices? -> check which countries are better for each 3P index.
 
 - Next paper -> development of countries over time, with an obvious focus on MENA
   countries (trends).
