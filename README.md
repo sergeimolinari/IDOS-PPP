@@ -4,6 +4,8 @@
 
 # NEXT STEPS
 
+- UNDERSTAND PROBLEM WITH BOXPLOTS AND KEEP ON PRODUCING GRAPHS / PLOTS (possibly for a presentation)
+
 - MEETING ON 13/5 (brainstorming in order to narrow down 1/2 areas of interest for the
   paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit
   hooks. How revolutions changed indicators -> difference between years (RDD and DiD) ->
