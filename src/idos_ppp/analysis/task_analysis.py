@@ -14,7 +14,7 @@ from idos_ppp.analysis.idos_dataanalysis import (
 )
 from idos_ppp.analysis.idos_trends import (
     calculate_statistics,
-    calculate_mean,
+    calculate_statistics_continent,
     calculate_growth
 )
 from idos_ppp.config import BLD
@@ -43,7 +43,7 @@ def task_prot_prov_correlation_year(
 
 def task_prot_prov_correlation_year_by_continent(
     merged_data=BLD / "data" / "merged_data.pkl",
-    produces=BLD / "analysis" / "prot_prov_correlations" / "yearly_prot_prov_continent_correlations.pkl",
+    produces=BLD / "analysis" / "prot_prov_correlations" / "yearly_prot_prov_continent_correlations.pkl"
 ):
     """Task to calculate yearly correlations between protection and provision by continent."""
     data = pd.read_pickle(merged_data)
@@ -68,7 +68,7 @@ def task_prov_part_correlation_year(
 
 def task_prov_part_correlation_year_by_continent(
     merged_data=BLD / "data" / "merged_data.pkl",
-    produces=BLD / "analysis" / "prov_part_correlations" / "yearly_prov_part_continent_correlations.pkl",
+    produces=BLD / "analysis" / "prov_part_correlations" / "yearly_prov_part_continent_correlations.pkl"
 ):
     """Task to calculate yearly correlations between provision and participation by continent."""
     data = pd.read_pickle(merged_data)
@@ -80,7 +80,7 @@ def task_prov_part_correlation_year_by_continent(
 # Trends and Regional Disparities -> Function: Create functions to calculate statistical measure and average values of key indicators.
 
 
-products_statistical_analysis = {list_name: BLD / "analysis" / "statistical_analysis" / "stats_to_feather" / f"{list_name}_yearly_statistics.arrow" for list_name in country_lists.keys()}
+products_statistical_analysis = {list_name: BLD / "analysis" / "statistical_analysis" / f"{list_name}_yearly_statistics.pkl" for list_name in country_lists.keys()}
 
 def task_statistical_analysis(
     merged_data=inputs_analysis,
@@ -90,22 +90,18 @@ def task_statistical_analysis(
     for list_name, data in merged_data.items():
         data = pd.read_pickle(data)
         yearly_statistics = calculate_statistics(data)
-        output_pkl_file_path = BLD / "analysis" / "statistical_analysis" / "stats_to_feather" / f"{list_name}_yearly_statistics.arrow"
-        yearly_statistics.to_feather(output_pkl_file_path)
+        output_pkl_file_path = BLD / "analysis" / "statistical_analysis" / f"{list_name}_yearly_statistics.pkl"
+        yearly_statistics.to_pickle(output_pkl_file_path)
 
 
-products_yearly_means = {list_name: BLD / "analysis" / "statistical_analysis" / "means" / f"{list_name}_yearly_3p_mean.pkl" for list_name in country_lists.keys()}
-
-def task_mean_3p_indexes(
-    merged_data=inputs_analysis,
-    produces=products_yearly_means,
+def task_calculate_statistics_by_continent(
+    merged_data=BLD / "data" / "merged_data.pkl",
+    produces=BLD / "analysis" / "statistical_analysis" / "yearly_statistics_by_continent.pkl",
 ):
-    """Task to calculate mean values for plotting."""
-    for list_name, data in merged_data.items():
-        data = pd.read_pickle(data)
-        mean_values = calculate_mean(data)
-        output_pkl_file_path = BLD / "analysis" / "statistical_analysis" / "means" / f"{list_name}_yearly_3p_mean.pkl"
-        mean_values.to_pickle(output_pkl_file_path)
+    """Task to calculate yearly statistical analysis by continent."""
+    data = pd.read_pickle(merged_data)
+    stat_yearly_continent_df = calculate_statistics_continent(data)
+    stat_yearly_continent_df.to_pickle(produces)
 
 
 # Growth -> Function: Create a function to calculate the growth ration for each year.
