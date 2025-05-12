@@ -10,10 +10,10 @@ pd.options.plotting.backend = "plotly"
 
 from idos_ppp.config import BLD, DATA
 from idos_ppp.data_management.idos_datamanagement import (
-    clean_and_concatenate_data, 
-    process_and_save_country_list
+    clean_and_concatenate_data,
+    process_and_save_country_list,
 )
-from idos_ppp.parameters import missing_countries, sheet_names, years, country_lists
+from idos_ppp.parameters import country_lists, missing_countries, sheet_names, years
 
 products_unzip = {
     "continents data": BLD
@@ -48,7 +48,8 @@ def task_clean_and_concatenate(
     }
     countries_list = pd.read_excel(raw_data, sheet_name="3-2", header=0)
     clean_data = clean_and_concatenate_data(
-        raw_data_dict=raw, country_codes=countries_list.iloc[0:, 1].tolist()
+        raw_data_dict=raw,
+        country_codes=countries_list.iloc[0:, 1].tolist(),
     )
     clean_data.to_csv(produces)
 
@@ -71,7 +72,7 @@ def task_merge_data(
         columns={
             "Code": "country_alpha3",
             "World regions according to OWID": "continent",
-        }
+        },
     )
     df2 = pd.concat([df2, missing_countries], ignore_index=True)
     df2["country_alpha3"] = df2["country_alpha3"].astype(pd.StringDtype())
@@ -98,15 +99,19 @@ def task_merge_data(
     merged_data_indexed.to_pickle(produces)
 
 
-products = {list_name: BLD / "data" / "subsets" / f"{list_name}_data.pkl" for list_name in country_lists.keys()}
+products = {
+    list_name: BLD / "data" / "subsets" / f"{list_name}_data.pkl"
+    for list_name in country_lists.keys()
+}
+
 
 def task_process_and_save_country_list(
     merged_data=BLD / "data" / "merged_data.pkl",
-    produces= products,
+    produces=products,
 ):
     """Task to create datasets constrained to countries in specified lists."""
     data = pd.read_pickle(merged_data)
     for list_name, country_list in country_lists.items():
         filtered_data = process_and_save_country_list(data, country_list)
         output_pkl_file_path = BLD / "data" / "subsets" / f"{list_name}_data.pkl"
-        filtered_data.to_pickle(output_pkl_file_path) # Save the filtered DataFrame as a PKL file
+        filtered_data.to_pickle(output_pkl_file_path)
