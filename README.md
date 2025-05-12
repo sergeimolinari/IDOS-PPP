@@ -4,8 +4,11 @@
 
 # NEXT STEPS
 
-- MEETING ON 13/5 (brainstorming in order to narrow down 1/2 areas of
-  interest for the paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit hooks. How revolutions changed indicators -> difference between years (RDD and DiD) -> there are differences in sheet “PROT” from column Q (in green extreme changes) -> observations and maybe motivation. Maybe also boxplots for stat analysis.
+- MEETING ON 13/5 (brainstorming in order to narrow down 1/2 areas of interest for the
+  paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit
+  hooks. How revolutions changed indicators -> difference between years (RDD and DiD) ->
+  there are differences in sheet “PROT” from column Q (in green extreme changes) ->
+  observations and maybe motivation. Maybe also boxplots for stat analysis.
 
 - Conflict / Post-conflict was a bit diappointing: only Yemen is part of the
   "conflict_countries", and Lebanon is the only other country in the
@@ -15,7 +18,8 @@
 - Much more interesting with GCC and Repressive Countries since we have data for all of
   them.
 
-- Comparison between continents, MENA, EU, GCC, Repressive and Conflict/Post-Conflict Countries -> DATA VISUALIZATION
+- Comparison between continents, MENA, EU, GCC, Repressive and Conflict/Post-Conflict
+  Countries -> DATA VISUALIZATION
 
 - Remember: Variance: Do the three indices display existing disparities between
   different countries? -> check interval / range. Plausibility: Are the results in line
@@ -86,6 +90,54 @@
   support (of course, there is some overlap in contents with engagement and financial
   donations, mentioned already in the previous element, but they also have an
   intra-societal specification).
+- In particular, here is **a detailed overview of the three indices for government
+  deliverables of social contracts**:
+  - **Protection**:
+    - External threats (Weight: 20.00%, Index: FFP Fragile States Index X1, Source: The
+      Fund for Peace).
+    - Civil wars (Weight: 20.00%, Index: UCDP data on fatalities in civil wars, Source:
+      University of Uppsala).
+    - Criminal acts (Weight: 20.00%, Index: Global Competitiveness Index Pillar 1
+      (Security), Source: World Economic Forum).
+    - State terror (Weight: 20.00%, Index: Political Terror Scale, Source: University of
+      North Carolina).
+    - Rule of law /human rights (Weight: 20.00%, Index: FFP Fragile States Index P3,
+      Source: The Fund for Peace).
+    - Environmental threats (Weight: not yet included).
+  - **Provision**:
+    - Water, Land (Weight: not yet included).
+    - Infrastructure (1. Weight: 6.25%, Index: Global Competitiveness Index Pillar 2
+      (Transport and utilities), Source: World Economic Forum; 2. Weight: 6.25%, Index:
+      Telecommunication Infrastructure Index, Source: UN Statistics Division).
+    - Education (1. Weight: 6.25%, Index: Gov't expenditure on primary and secondary
+      education (% of GDP), Source: World Bank; 2. Weight: 6.25%, Index: Global
+      Competitiveness Index Pillar 6.4 (Skills of future workforce), Source: World
+      Economic Forum).
+    - Health (1. Weight: 6.25%, Index: Gov't health expenditure (% of GDP), Source:
+      World Bank; 2. Weight: 6.25%, Index: Out of pocket expenditure (% of total
+      national health care spending), Source: World Bank).
+    - Social protection (1. Weight: 6.25%, Index: Public social protection expenditure
+      excl. health (% of GDP), Source: World Bank; 2. Weight: 6.25%, Index: Share of
+      people above retirement age receiving an old-age pension, Source: International
+      Labour Office).
+    - Poverty reduction (1. Weight: 6.25%, Index: Public expenditure on social safety
+      nets (% of GDP), Source: World Bank; 2. Weight: 6.25%, Index: Vulnerable persons
+      covered by social assistance (%), Source: International Labour Office).
+    - Employment (1. Weight: 6.25%, Index: Share of wage employment on work age
+      population (%), Source: International Labour Office; 2. Weight: 6.25%, Index:
+      Working poverty head-count rate (%), Source: International Labour Office).
+    - Rule of law (economic) (1. Weight: 6.25%, Index: Global Competitiveness Index
+      Pillar 1F (Property rights), Source: World Economic Forum; 2. Weight: 6.25%,
+      Index: Global Competitiveness Index Pillar 1E (Incidence of corruption), Source:
+      World Economic Forum).
+    - Markets (1. Weight: 6.25%, Index: Global Competitiveness Index Pillar 7A (Market
+      competition), Source: World Economic Forum; 2. Weight: 6.25%, Index: Global
+      Competitiveness Index Pillar 1E (Public-sector performance), Source: World
+      Economic Forum).
+  - **Participation**:
+    - V-Dem Index on electoral democracy (Weight: 50.00%, Source: University of
+      Gothenburg).
+    - Voice and Accountability Indicator (Weight: 50.00%, Source: World Bank).
 - We also realized that it is difficult to find meaningful indicators for the last three
   elements, that is, the deliverables provided by and among society in general. Some of
   their aspects are covered by the questions included in the World Value Survey, but
