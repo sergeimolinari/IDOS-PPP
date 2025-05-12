@@ -10,39 +10,45 @@ from idos_ppp.parameters import three_p_indexes
 
 
 def calculate_statistics(data):
-    """Calculate the mean, median, and standard deviation of key indicators for each year.
+    """Calculate the mean, median, standard deviation, range, and interval of key indicators for each year.
 
     Arguments: - data: pd.DataFrame containing the data.
 
     Returns:
-    pd.DataFrame: A DataFrame with the three statistical values for each year and continent.
+    pd.DataFrame: A DataFrame with the statistical values for each year.
     """
     _fail_if_not_dataframe(data)
     _fail_if_empty_dataframe(data)
 
     grouped_data = data.groupby(["year"])[three_p_indexes]
 
-    statistics = grouped_data.agg(["mean", "median", "std"]).reset_index()
+    statistics = grouped_data.agg(["mean", "median", "std", "min", "max"]).reset_index()
+
+    for index in three_p_indexes:
+        statistics[(index, 'range')] = statistics[(index, 'max')] - statistics[(index, 'min')]
 
     return statistics
 
 
-def calculate_mean(data):
-    """Calculate and save the mean of key indicators for each year.
+def calculate_statistics_continent(data):
+    """Calculate the mean, median, standard deviation, range, and interval of key indicators for each year for each continent.
 
     Arguments: - data: pd.DataFrame containing the data.
 
     Returns:
-    pd.DataFrame: A DataFrame with the mean for each year and continent.
+    pd.DataFrame: A DataFrame with the statistical values for each year.
     """
     _fail_if_not_dataframe(data)
     _fail_if_empty_dataframe(data)
 
-    grouped_data = data.groupby(["year"])[three_p_indexes]
+    grouped_continent_data = data.groupby(["year", "continent"])[three_p_indexes]
 
-    mean_values = grouped_data.mean().reset_index()
+    statistics_by_continent = grouped_continent_data.agg(["mean", "median", "std", "min", "max"]).reset_index()
 
-    return mean_values
+    for index in three_p_indexes:
+        statistics_by_continent[(index, 'range')] = statistics_by_continent[(index, 'max')] - statistics_by_continent[(index, 'min')]
+
+    return statistics_by_continent
 
 
 # Growth -> Function: Create a function to calculate the growth ration for each year.
