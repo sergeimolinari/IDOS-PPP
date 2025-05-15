@@ -6,12 +6,13 @@ pd.options.mode.copy_on_write = True
 pd.options.future.infer_string = True
 pd.options.plotting.backend = "plotly"
 
-from idos_ppp.parameters import three_p_indexes, years, country_lists
+from idos_ppp.parameters import three_p_indexes
+
+# Boxplots -> Function: Create a function to create a boxplot for each of the 3P indexes over the years.
 
 
 def plot_boxplots(data, output_dir):
-    """
-    Plot boxplots for each of the 3P indexes over the years and save the plots in png format.
+    """Plot boxplots for each of the 3P indexes over the years and save the plots in png format.
 
     Arguments:
     - data: pd.DataFrame containing the statistics data.
@@ -30,7 +31,9 @@ def plot_boxplots(data, output_dir):
         sns.boxplot(data=data, x="year", y=index)
         plt.xlabel("Year")
         plt.ylabel(f"{index.capitalize()} value")
-        plt.title(f"Boxplot of {dataset_name.capitalize()}' {index.capitalize()} over the years")
+        plt.title(
+            f"Boxplot of {dataset_name.capitalize()}' {index.capitalize()} over the years",
+        )
 
         output_png_file_path = output_dir / f"{index.capitalize()}_boxplot.png"
         plt.savefig(output_png_file_path)
