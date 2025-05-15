@@ -3,40 +3,30 @@
 import pandas as pd
 
 from idos_ppp.config import BLD
-from idos_ppp.parameters import three_p_indexes, country_lists
 from idos_ppp.final.idos_plot import plot_boxplots
+from idos_ppp.parameters import country_lists, three_p_indexes
 
-# BEFORE
-'''
-products = [
-    BLD / "final" / "trend_plots" / "protection_mean_trend.png",
-    BLD / "final" / "trend_plots" / "provision_mean_trend.png",
-    BLD / "final" / "trend_plots" / "participation_mean_trend.png",
-]
+inputs_plots = {
+    list_name: BLD / "data" / "subsets" / f"{list_name}_data.pkl"
+    for list_name in country_lists.keys()
+}
+inputs_plots["merged_dataframe_countries"] = BLD / "data" / "merged_data.pkl"
 
 
-def task_plot_trends(
-    mean_values=BLD / "analysis" / "continent_mean.pkl",
-    produces=products
-):
-    """Task to plot the trend of mean values for key indicators over the years."""
-    mean_data = pd.read_pickle(mean_values)
-    plot_mean_trends(mean_data, produces[0].parent)
-'''
+# Boxplots -> Function: Create a function to create a boxplot for each of the 3P indexes over the years.
 
-inputs_plots = {list_name: BLD / "data" / "subsets" / f"{list_name}_data.pkl" for list_name in country_lists.keys()}
-inputs_plots['merged_dataframe_countries'] = BLD / "data" / "merged_data.pkl"
 
-#inputs_plots = {list_name: BLD / "analysis" / "statistical_analysis" / f"{list_name}_yearly_statistics.pkl" for list_name in country_lists.keys()}
-#inputs_plots['merged_dataframe'] = BLD / "analysis" / "statistical_analysis" / "merged_dataframe_yearly_statistics.pkl"
 products_plots = []
-for list_name in inputs_plots.keys():
+for list_name in inputs_plots:
     for index in three_p_indexes:
-        products_plots.append(BLD / "final" / "boxplots" / f"{list_name}" / f"{index}_boxplot.png")
+        products_plots.append(
+            BLD / "final" / "boxplots" / f"{list_name}" / f"{index}_boxplot.png",
+        )
+
 
 def task_plot_boxplots(
     stat_values=inputs_plots,
-    produces=products_plots
+    produces=products_plots,
 ):
     """Task to plot boxplots for each of the 3P indexes over the years."""
     for list_name, stat_data_path in stat_values.items():
