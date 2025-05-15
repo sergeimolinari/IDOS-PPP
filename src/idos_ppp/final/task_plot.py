@@ -3,9 +3,10 @@
 import pandas as pd
 
 from idos_ppp.config import BLD
-from idos_ppp.parameters import three_p_indexes, years, country_lists
+from idos_ppp.parameters import three_p_indexes, country_lists
 from idos_ppp.final.idos_plot import plot_boxplots
 
+# BEFORE
 '''
 products = [
     BLD / "final" / "trend_plots" / "protection_mean_trend.png",
@@ -22,15 +23,16 @@ def task_plot_trends(
     mean_data = pd.read_pickle(mean_values)
     plot_mean_trends(mean_data, produces[0].parent)
 '''
-# PROBLEMMMMMMMM
 
-inputs_plots = {list_name: BLD / "analysis" / "statistical_analysis" / f"{list_name}_yearly_statistics.pkl" for list_name in country_lists.keys()}
-inputs_plots['merged_dataframe'] = BLD / "analysis" / "statistical_analysis" / "merged_dataframe_yearly_statistics.pkl"
+inputs_plots = {list_name: BLD / "data" / "subsets" / f"{list_name}_data.pkl" for list_name in country_lists.keys()}
+inputs_plots['merged_dataframe_countries'] = BLD / "data" / "merged_data.pkl"
+
+#inputs_plots = {list_name: BLD / "analysis" / "statistical_analysis" / f"{list_name}_yearly_statistics.pkl" for list_name in country_lists.keys()}
+#inputs_plots['merged_dataframe'] = BLD / "analysis" / "statistical_analysis" / "merged_dataframe_yearly_statistics.pkl"
 products_plots = []
-for list_name in country_lists.keys():
+for list_name in inputs_plots.keys():
     for index in three_p_indexes:
-        for year in years:
-            products_plots.append(BLD / "final" / "boxplots" / f"{list_name}" / f"{index}_boxplot_{year}.png")
+        products_plots.append(BLD / "final" / "boxplots" / f"{list_name}" / f"{index}_boxplot.png")
 
 def task_plot_boxplots(
     stat_values=inputs_plots,

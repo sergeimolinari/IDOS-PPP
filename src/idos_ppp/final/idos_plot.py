@@ -46,23 +46,21 @@ def plot_boxplots(data, output_dir):
     _fail_if_not_dataframe(data)
     _fail_if_empty_dataframe(data)
 
+    dataset_name = output_dir.name.replace("_", " ")
+
     # Iterate over each year and each index
-    for year in years:
-        for index in three_p_indexes:
-            plt.figure(figsize=(12, 6))
+    for index in three_p_indexes:
+        plt.figure(figsize=(12, 6))
 
-            # Filter data for the current year and index
-            year_data = data[data['year'] == year]
-            sns.boxplot(data=year_data, x=year_data.index.get_level_values(0), y=(index, 'mean'))
+        # Filter data for the current year and index
+        sns.boxplot(data=data, x="year", y=index)
+        plt.xlabel("Year")
+        plt.ylabel(f"{index.capitalize()} value")
+        plt.title(f"Boxplot of {dataset_name.capitalize()}' {index.capitalize()} over the years")
 
-            plt.xlabel("Year")
-            plt.ylabel("Mean value")
-            plt.title(f"Boxplot of {index.capitalize()} for year {year}")
-            plt.xticks(rotation=45)
-
-            output_png_file_path = output_dir / f"{index}_boxplot_{year}.png"
-            plt.savefig(output_png_file_path)
-            plt.close()
+        output_png_file_path = output_dir / f"{index.capitalize()}_boxplot.png"
+        plt.savefig(output_png_file_path)
+        plt.close()
 
 # PROBLEMMMMMMMMM
 
