@@ -88,9 +88,9 @@ line-length = 88  # or any other value that suits your needs
 [tool.ruff.lint]
 select = ["ALL"]
 extend-ignore = [
-    # "ANN",  # Missing type annotations
+    "ANN",  # Missing type annotations
     "COM812", # Conflict with ruff-format
-    # "D10",  # Missing docstrings
+    "D10",  # Missing docstrings
     "ISC001", # Conflict with ruff-format
     "PD901", # df is a great name with functional data management
     "PLR0913",  # Too many arguments in function definition
