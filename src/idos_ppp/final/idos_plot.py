@@ -6,7 +6,7 @@ pd.options.mode.copy_on_write = True
 pd.options.future.infer_string = True
 pd.options.plotting.backend = "plotly"
 
-from idos_ppp.parameters import three_p_indexes
+from idos_ppp.parameters import three_p_indexes, country_lists
 
 
 # Boxplots -> Function: Create a function to create a boxplot for each of the 3P indexes over the years.
@@ -31,7 +31,7 @@ def plot_boxplots(data, output_dir):
         plt.xlabel("Year")
         plt.ylabel(f"{index.capitalize()} value")
         plt.title(
-            f"Boxplot of {dataset_name.capitalize()}' {index.capitalize()} over the years",
+            f"Boxplot of {dataset_name.title()}' {index.title()} Over The Years",
         )
 
         output_png_file_path = output_dir / f"{index.capitalize()}_boxplot.png"
@@ -43,9 +43,9 @@ def plot_boxplots(data, output_dir):
 
 # PROBLEMMMMMMMM
 
-def plot_correlation_heatmap(data, output_dir):
+def plot_correlation(data, output_dir):
     """
-    Plot correlation heatmaps for the 3P indexes and highlight pessimistic and optimistic values.
+    Plot correlation values over the years and highlight pessimistic and optimistic values.
 
     Arguments:
     - data: pd.DataFrame containing the raw data.
@@ -57,46 +57,36 @@ def plot_correlation_heatmap(data, output_dir):
     # Extract the dataset name from the output directory path
     dataset_name = output_dir.name.replace("_", " ")
 
+    # Extract the folder name from the output directory path
+    folder_name = output_dir.parent.name.replace("_", " ")
+
     data = data.reset_index()
 
-    # Iterate over each year
-    for year in data['year'].unique():
-        plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(10, 6))
 
-        # Filter data for the current year
-        year_data = data[data['year'] == year]
+    # Create a line plot for the correlation values over the years
+    # sns.lineplot(data=data, x="year", y="correlation", marker="s")
 
-        # Calculate the mean values for the three_p_indexes
-        mean_values = year_data[three_p_indexes].mean().to_frame().T
+    # Create a scatter plot for the correlation values over the years
+    sns.scatterplot(data=data, x="year", y="correlation", markers="s")
 
-        # Calculate the correlation matrix for the mean values
-        correlation_matrix = mean_values.corr()
+    # Highlight pessimistic values below 0.2
+    pessimistic_data = data[data['correlation'] < 0.2]
+    plt.scatter(pessimistic_data['year'], pessimistic_data['correlation'], color='red', label='Pessimistic (< 0.2)', zorder=5)
 
-        # Create a heatmap
-        sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', cbar_kws={'label': 'Correlation Values'})
+    # Highlight optimistic values above 0.8
+    optimistic_data = data[data['correlation'] > 0.8]
+    plt.scatter(optimistic_data['year'], optimistic_data['correlation'], color='green', label='Optimistic (> 0.8)', zorder=5)
 
-        # Highlight cells with values below 0.2 and above 0.8
-        highlight_mask_low = correlation_matrix < 0.2
-        highlight_mask_high = correlation_matrix > 0.8
+    plt.xlabel("Year")
+    plt.ylabel("Correlation")
+    plt.title(f'{folder_name.title()} of {dataset_name.title()} Over The Years')
+    plt.legend()
 
-        # Create custom colormaps for highlighting
-        cmap = sns.color_palette("coolwarm", as_cmap=True)
-        highlight_cmap_pessimistic = sns.light_palette("blue", as_cmap=True)
-        highlight_cmap_optimistic = sns.light_palette("green", as_cmap=True)
+    output_png_file_path = output_dir / f"{output_dir.name}_correlation.png"
+    plt.savefig(output_png_file_path)
+    plt.close()
 
-        # Plot the heatmap with highlighting
-        sns.heatmap(correlation_matrix, annot=True, cmap=cmap, mask=~(highlight_mask_low | highlight_mask_high), cbar_kws={'label': 'Correlation Values'})
-        sns.heatmap(correlation_matrix, annot=True, cmap=highlight_cmap_pessimistic, mask=~highlight_mask_low, cbar=False)
-        sns.heatmap(correlation_matrix, annot=True, cmap=highlight_cmap_optimistic, mask=~highlight_mask_high, cbar=False)
-
-        plt.title(f'Correlation Heatmap of {dataset_name.capitalize()} Mean Values for {year}')
-
-        output_png_file_path = output_dir / f"{year}_correlation_heatmap.png"
-        plt.savefig(output_png_file_path)
-        plt.close()
-
-# Example usage:
-# plot_correlation_heatmap(raw_data, BLD / "final" / "correlation_heatmaps" / "dataset_name")
 
 # Error handling functions
 def _fail_if_not_dataframe(data):
