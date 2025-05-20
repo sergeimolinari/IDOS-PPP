@@ -54,9 +54,8 @@ def task_plot_boxplots(
         plot_boxplots(data, output_png_file_path)
 
 
-# Heatmaps -> Function: Create a function to create a heatmap for the correlation of the 3P indexes over the years.
+# Scatterplots for correlations -> Function: Create a function to create a heatmap for the correlation of the 3P indexes over the years.
 
-# PROBLEMMMMMMMM
 
 products_prot_prov_correlations = []
 for list_name in inputs_prot_prov_correlations:
