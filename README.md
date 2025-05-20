@@ -9,14 +9,6 @@
 - Here are some cool visualization ideas using matplotlib and seaborn to effectively
   present your data:
 
-  1. Highlighting "Pessimistic" Values with High Range - Heatmap: Use a heatmap to
-     visualize the range values. Highlight cells with values above a certain threshold
-     using a color gradient that emphasizes higher ranges. This can help quickly
-     identify countries with significant disparities.
-  1. Boxplots for Mean, Median, and Range - Boxplots: Create boxplots for each index
-     (protection, provision, participation) to show the distribution of values across
-     countries. Use different colors to represent mean, median, and range. This can help
-     visualize the spread and central tendency of the data.
   1. Growth Data Visualization - Heatmap with Color Coding: Use a heatmap to visualize
      growth data, with colors indicating growth levels. Use green for values above 1.1
      (positive growth) and red for values below 0.9 (negative growth). This can help
@@ -30,12 +22,6 @@
      Charts: Use radar charts to visualize the performance of each country across the
      three indices for each year. This can provide a holistic view of how countries
      perform across multiple dimensions.
-  1. Correlations between Provision, Participation, and Protection - Scatter Plots with
-     Regression Lines: Create scatter plots to visualize the relationship between
-     provision and participation, and provision and protection. Add regression lines to
-     highlight trends and correlations. - Pair Plots: Use seaborn's pairplot to create a
-     matrix of scatter plots showing the relationships between all pairs of indices.
-     This can provide a comprehensive view of how different indices interact.
   1. Best and Worst Countries for Each Indicator - Bar Charts for Extremes: Create bar
      charts that highlight the best and worst performing countries for each indicator.
      Use contrasting colors to emphasize the top and bottom performers. - Ranking
