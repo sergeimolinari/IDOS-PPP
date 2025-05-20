@@ -10,7 +10,9 @@ from idos_ppp.analysis.idos_dataanalysis import (
     calculate_yearly_prot_prov_continent_correlations,
     calculate_yearly_prot_prov_correlations,
     calculate_yearly_prov_part_continent_correlations,
-    calculate_yearly_prov_part_correlations
+    calculate_yearly_prov_part_correlations,
+    calculate_yearly_prot_part_continent_correlations,
+    calculate_yearly_prot_part_correlations
 )
 from idos_ppp.analysis.idos_trends import (
     calculate_statistics,
@@ -24,7 +26,7 @@ inputs_analysis = {list_name: BLD / "data" / "subsets" / f"{list_name}_data.pkl"
 inputs_analysis['merged_dataframe'] = BLD / "data" / "merged_data.pkl"
 
 
-# Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision.
+# Correlation Analysis -> Function: Create a function to calculate and visualize the correlation between protection and provision, provision and participation, and protection and participation.
 
 
 products_prot_prov_corr = {list_name: BLD / "analysis" / "prot_prov_correlations" / f"{list_name}_yearly_prot_prov_correlations.pkl" for list_name in country_lists.keys()}
@@ -73,6 +75,31 @@ def task_prov_part_correlation_year_by_continent(
     """Task to calculate yearly correlations between provision and participation by continent."""
     data = pd.read_pickle(merged_data)
     yearly_continent_df = calculate_yearly_prov_part_continent_correlations(data)
+
+    yearly_continent_df.to_pickle(produces)
+
+
+products_prot_part_corr = {list_name: BLD / "analysis" / "prot_part_correlations" / f"{list_name}_yearly_prot_part_correlations.pkl" for list_name in country_lists.keys()}
+
+def task_prot_part_correlation_year(
+    merged_data=inputs_analysis,
+    produces=products_prot_part_corr,
+):
+    """Task to calculate yearly correlations between protection and participation."""
+    for list_name, data in merged_data.items():
+        data = pd.read_pickle(data)
+        yearly_prot_part_correlations_data = calculate_yearly_prot_part_correlations(data)
+        output_pkl_file_path = BLD / "analysis" / "prot_part_correlations" / f"{list_name}_yearly_prot_part_correlations.pkl"
+        yearly_prot_part_correlations_data.to_pickle(output_pkl_file_path)
+
+
+def task_prot_part_correlation_year_by_continent(
+    merged_data=BLD / "data" / "merged_data.pkl",
+    produces=BLD / "analysis" / "prot_part_correlations" / "yearly_prot_part_continent_correlations.pkl"
+):
+    """Task to calculate yearly correlations between protection and participation by continent."""
+    data = pd.read_pickle(merged_data)
+    yearly_continent_df = calculate_yearly_prot_part_continent_correlations(data)
 
     yearly_continent_df.to_pickle(produces)
 
