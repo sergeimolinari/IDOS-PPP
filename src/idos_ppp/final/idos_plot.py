@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import plotly.express as px
 
 pd.options.mode.copy_on_write = True
 pd.options.future.infer_string = True
@@ -53,10 +54,8 @@ def plot_correlation(data, output_dir):
     _fail_if_not_dataframe(data)
     _fail_if_empty_dataframe(data)
 
-    # Extract the dataset name from the output directory path
     dataset_name = output_dir.name.replace("_", " ")
 
-    # Extract the folder name from the output directory path
     folder_name = output_dir.parent.name.replace("_", " ")
 
     data = data.reset_index()
@@ -78,6 +77,72 @@ def plot_correlation(data, output_dir):
     output_png_file_path = output_dir / f"{output_dir.name}_correlation.png"
     plt.savefig(output_png_file_path)
     plt.close()
+
+
+# Bar Charts -> Create a bar chart to compare the values of key indices between countries for a specific year.
+
+
+def plot_comparative_bar_chart(data, year, indices):
+    """
+    Plot a comparative bar chart for the given indices between countries for a specific year.
+
+    Arguments:
+    - data: pd.DataFrame containing the filtered data.
+    - year: int, the year to plot.
+    - indices: list containing the indices to compare.
+    """
+    _fail_if_not_dataframe(data)
+    _fail_if_empty_dataframe(data)
+
+    plt.figure(figsize=(12, 6))
+
+    # Filter data for the specific year
+    year_data = data[data['year'] == year]
+
+    # Melt the data for plotting
+    melted_data = year_data.melt(id_vars=['country_name'], value_vars=indices, var_name='Index', value_name='Value')
+
+    countries = melted_data["country_name"].unique()
+    
+    # Create a bar chart
+    sns.barplot(data=melted_data, x='Index', y='Value', hue='country_name')
+
+    plt.title(f'Comparison of Key Indices between {countries[0]} and {countries[1]} for {year}')
+    plt.ylabel('Value')
+    plt.legend(title='Country')
+    
+
+
+# Create interactive plots using Plotly to allow to explore the data dynamically.
+
+
+def plot_interactive_plots(data, indices, output_dir):
+    """
+    Plot interactive plots for the given indices over time for the considered countries.
+
+    Arguments:
+    - data: pd.DataFrame containing the filtered data.
+    - indices: list containing the indices to plot.
+    """
+    _fail_if_not_dataframe(data)
+    _fail_if_empty_dataframe(data)
+
+    # Melt the data for plotting
+    melted_data = data.melt(id_vars=['country_name', 'year'], value_vars=indices, var_name='Index', value_name='Value')
+
+    countries = melted_data["country_name"].unique()
+    
+    # Create interactive line plots
+    fig = px.line(melted_data, x='year', y='Value', color='country_name', line_group='Index',
+                  line_dash='Index', hover_name='Index')
+    
+    fig.add_vline(x=2011, line_width=3, line_dash="dash", line_color="orange", annotation_text="2011", annotation_position="bottom left")
+    
+    fig.for_each_trace(lambda t: t.update(name=t.name.replace('country_name=', 'Country Name: ').replace('Index=', '').title()))
+    
+    fig.update_layout(title=f'Trends of 3P Indices Over Time for {countries[0]} and {countries[1]}')
+
+    fig.write_html(output_dir / "conflict_and_postconflict_countries_interactive_plot.html")
 
 
 # Error handling functions
