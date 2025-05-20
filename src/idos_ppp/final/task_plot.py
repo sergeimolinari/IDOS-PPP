@@ -1,9 +1,10 @@
 """Task running the results formatting (plots of trend by 3p index)."""
 
+import matplotlib.pyplot as plt
 import pandas as pd
 
 from idos_ppp.config import BLD
-from idos_ppp.final.idos_plot import plot_boxplots, plot_correlation
+from idos_ppp.final.idos_plot import plot_boxplots, plot_correlation, plot_comparative_bar_chart, plot_interactive_plots
 from idos_ppp.parameters import country_lists, three_p_indexes, years
 
 inputs_plots = {
@@ -109,3 +110,41 @@ def task_plot_prot_part_correlations(
         data = pd.read_pickle(data_path)
         output_png_file_path = BLD / "final" / "prot_part_correlations" / f"{list_name}"
         plot_correlation(data, output_png_file_path)
+
+
+# Bar Charts -> Create a bar chart to compare the values of key indices between countries for a specific year.
+
+
+products_comparative_bar_charts = []
+for year in years:
+    products_comparative_bar_charts.append(
+        BLD / "final" / "lebanon_and_yemen" / "comparative_bar_charts" / f"bar_chart_{year}.png",
+    )
+
+
+def task_plot_comparative_bar_charts(
+    input_data=BLD / "data" / "subsets" / "conflict_and_postconflict_countries_data.pkl",
+    produces=products_comparative_bar_charts,
+):
+    """Task to plot comparative bar charts for each dataset over the years."""
+    data = pd.read_pickle(input_data)
+    data = data.reset_index()
+    output_dir = BLD / "final" / "lebanon_and_yemen" / "comparative_bar_charts"
+    for year in years:
+        plot_comparative_bar_chart(data, year, three_p_indexes)
+        plt.savefig(output_dir / f"bar_chart_{year}.png")
+        plt.close()
+
+
+# Create interactive plots using Plotly to allow to explore the data dynamically.
+
+
+def task_plot_interactive_plots(
+    input_data=BLD / "data" / "subsets" / "conflict_and_postconflict_countries_data.pkl",
+    produces=BLD / "final" / "lebanon_and_yemen" / "interactive_plots" / "conflict_and_postconflict_countries_interactive_plot.html",
+):
+    """Task to plot interactive plots for each dataset over the years."""
+    data = pd.read_pickle(input_data)
+    data = data.reset_index()
+    output_dir = BLD / "final" / "lebanon_and_yemen" / "interactive_plots"
+    plot_interactive_plots(data, three_p_indexes, output_dir)
