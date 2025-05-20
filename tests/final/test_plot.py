@@ -1,7 +1,12 @@
 import pandas as pd
 import pytest
 
-from src.idos_ppp.final.idos_plot import plot_boxplots, plot_correlation
+from src.idos_ppp.final.idos_plot import (
+    plot_boxplots,
+    plot_comparative_bar_chart,
+    plot_correlation,
+    plot_interactive_plots,
+)
 from src.idos_ppp.parameters import three_p_indexes
 
 
@@ -10,8 +15,8 @@ def sample_data():
     data = {
         "year": [2020, 2020, 2021, 2021],
         "continent": ["Africa", "Asia", "Africa", "Asia"],
-        "country_alpha3": ['ITA', 'CHN', 'DEU', 'IND'],
-        "country_name": ['Italy', 'China', 'Germany', 'India'],
+        "country_alpha3": ["ITA", "CHN", "DEU", "IND"],
+        "country_name": ["Italy", "China", "Germany", "India"],
         "protection": [1.5, 2.5, 3.5, 4.5],
         "provision": [2.0, 3.0, 4.0, 5.0],
         "participation": [1.0, 2.0, 3.0, 4.0],
@@ -23,7 +28,7 @@ def sample_data():
 def sample_correlation_data():
     data = {
         "year": [2007, 2010, 2013, 2016, 2019],
-        "correlation": [0.1, 0.3, 0.5, 0.7, 0.9]
+        "correlation": [0.1, 0.3, 0.5, 0.7, 0.9],
     }
     return pd.DataFrame(data)
 
@@ -84,3 +89,34 @@ def test_plot_correlation_highlighting(sample_correlation_data, output_dir):
     plot_correlation(sample_correlation_data, output_dir)
     output_file = output_dir / f"{output_dir.name}_correlation.png"
     assert output_file.exists()
+
+
+def test_plot_comparative_bar_chart_error_handling():
+    empty_data = pd.DataFrame()
+    year = 2007
+    indices = ["protection", "provision", "participation"]
+    with pytest.raises(ValueError):
+        plot_comparative_bar_chart(empty_data, year, indices)
+
+
+def test_plot_interactive_plots(sample_data, output_dir):
+    indices = ["protection", "provision", "participation"]
+    plot_interactive_plots(sample_data, indices, output_dir)
+    output_file = (
+        output_dir / "conflict_and_postconflict_countries_interactive_plot.html"
+    )
+    assert output_file.exists()
+
+
+def test_plot_interactive_plots_error_handling(output_dir):
+    empty_data = pd.DataFrame()
+    indices = ["protection", "provision", "participation"]
+    with pytest.raises(ValueError):
+        plot_interactive_plots(empty_data, indices, output_dir)
+
+
+def test_plot_interactive_plots_missing_columns(sample_data, output_dir):
+    data_missing_columns = sample_data.drop(columns=["protection"])
+    indices = ["protection", "provision", "participation"]
+    with pytest.raises(KeyError):
+        plot_interactive_plots(data_missing_columns, indices, output_dir)
