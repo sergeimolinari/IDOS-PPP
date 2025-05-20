@@ -101,7 +101,8 @@ extend-ignore = [
     "E501", # Line too long
     "ERA001", # Use of `assert` detected
     "D100", # Missing docstring in public module
-    # "W291", # Trailing whitespace
+    "W291", # Trailing whitespace
+    "PT011", # Use of `assert` detected
     "PTH109", # Use of `assert` detected
     "T201", # Use of `assert` detected
     "F811", # Redefining name from outer scope
