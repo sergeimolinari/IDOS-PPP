@@ -68,18 +68,19 @@ def plot_correlation(data, output_dir):
     # sns.lineplot(data=data, x="year", y="correlation", marker="s")
 
     # Create a scatter plot for the correlation values over the years
-    sns.scatterplot(data=data, x="year", y="correlation", markers="s")
+    scatter = plt.scatter(data['year'], data['correlation'], c=data['correlation'], cmap='viridis')
+
+    # sns.scatterplot(data=data, x="year", y="correlation", markers="s")
 
     # Highlight pessimistic values below 0.2
     pessimistic_data = data[data['correlation'] < 0.2]
-    plt.scatter(pessimistic_data['year'], pessimistic_data['correlation'], color='red', label='Pessimistic (< 0.2)', zorder=5)
+    plt.scatter(pessimistic_data['year'], pessimistic_data['correlation'], color='red', label='Low (< 0.2)', zorder=5)
 
     # Highlight optimistic values above 0.8
     optimistic_data = data[data['correlation'] > 0.8]
-    plt.scatter(optimistic_data['year'], optimistic_data['correlation'], color='green', label='Optimistic (> 0.8)', zorder=5)
+    plt.scatter(optimistic_data['year'], optimistic_data['correlation'], color='green', label='High (> 0.8)', zorder=5)
 
     plt.xlabel("Year")
-    plt.ylabel("Correlation")
     plt.title(f'{folder_name.title()} of {dataset_name.title()} Over The Years')
     plt.legend()
 
