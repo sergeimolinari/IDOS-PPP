@@ -32,11 +32,10 @@
      highlight the differences and similarities between the two countries. -
      Side-by-Side Line Plots: Create line plots showing the trends of key indices over
      time for Yemen and Lebanon. This can help visualize how the two countries have
-     evolved over the years. Additional Ideas: - Interactive Plots: If possible, use
-     interactive plots (e.g., with Plotly) to allow users to explore the data
-     dynamically. This can make the presentation more engaging and informative. -
-     Geospatial Visualization: Use maps to visualize the performance of countries across
-     different indices. This can provide a geographical context to the data.
+     evolved over the years.
+     Additional Idea: - Interactive Plots: If possible, use interactive plots (e.g.,
+     with Plotly) to allow users to explore the data dynamically. This can make the
+     presentation more engaging and informative.
 
 - MEETING ON 28/5 (brainstorming in order to narrow down 1/2 areas of interest for the
   paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit
