@@ -9,7 +9,6 @@ pd.options.plotting.backend = "plotly"
 
 from idos_ppp.parameters import three_p_indexes, country_lists
 
-
 # Boxplots -> Function: Create a function to create a boxplot for each of the 3P indexes over the years.
 
 
@@ -116,13 +115,15 @@ def plot_comparative_bar_chart(data, year, indices):
 # Create interactive plots using Plotly to allow to explore the data dynamically.
 
 
-def plot_interactive_plots(data, indices, output_dir):
+def plot_interactive_plots(data, indices, output_dir, list_name):
     """
     Plot interactive plots for the given indices over time for the considered countries.
 
     Arguments:
     - data: pd.DataFrame containing the filtered data.
     - indices: list containing the indices to plot.
+    - output_dir: Path, directory to save the output plots.
+    - list_name: str, name of the list to use in the output file name.
     """
     _fail_if_not_dataframe(data)
     _fail_if_empty_dataframe(data)
@@ -131,19 +132,26 @@ def plot_interactive_plots(data, indices, output_dir):
     melted_data = data.melt(id_vars=['country_name', 'year'], value_vars=indices, var_name='Index', value_name='Value')
 
     countries = melted_data["country_name"].unique()
-    
+
     # Create interactive line plots
     fig = px.line(melted_data, x='year', y='Value', color='country_name', line_group='Index',
                   line_dash='Index', hover_name='Index')
-    
+
+    # Add a vertical dashed line at the year 2011
     fig.add_vline(x=2011, line_width=3, line_dash="dash", line_color="orange", annotation_text="2011", annotation_position="bottom left")
-    
+
+    # Customize legend labels
     fig.for_each_trace(lambda t: t.update(name=t.name.replace('country_name=', 'Country Name: ').replace('Index=', '').title()))
-    
-    fig.update_layout(title=f'Trends of 3P Indices Over Time for {countries[0]} and {countries[1]}')
 
-    fig.write_html(output_dir / "conflict_and_postconflict_countries_interactive_plot.html")
+    # Update the title to reflect multiple countries
+    if len(countries) > 2:
+        fig.update_layout(title=f"Trends of 3P Indices Over Time")
+    elif len(countries) == 2:
+        fig.update_layout(title=f'Trends of 3P Indices Over Time for {countries[0]} and {countries[1]}')
+    else:
+        fig.update_layout(title=f"Trends of 3P Indices Over Time for {countries[0]}")
 
+    fig.write_html(output_dir / f"{list_name}_interactive_plot.html")
 
 # Error handling functions
 def _fail_if_not_dataframe(data):
