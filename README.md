@@ -9,24 +9,12 @@
 - Here are some cool visualization ideas using matplotlib and seaborn to effectively
   present your data:
 
-  1. Growth Data Visualization - Heatmap with Color Coding: Use a heatmap to visualize
+  - Growth Data Visualization - Heatmap with Color Coding: Use a heatmap to visualize
      growth data, with colors indicating growth levels. Use green for values above 1.1
      (positive growth) and red for values below 0.9 (negative growth). This can help
      highlight countries with significant changes. - Line Plot with Highlights: Create a
      line plot for each country's growth over time, with markers or annotations to
      highlight years with significant changes (either above 1.1 or below 0.9).
-  1. Yearly Comparisons for Provision, Participation, and Protection - Bar Charts:
-     Create grouped bar charts for each year, showing the values of provision,
-     participation, and protection for each country. This can help compare the
-     performance of different countries across these indices for each year. - Radar
-     Charts: Use radar charts to visualize the performance of each country across the
-     three indices for each year. This can provide a holistic view of how countries
-     perform across multiple dimensions.
-  1. Best and Worst Countries for Each Indicator - Bar Charts for Extremes: Create bar
-     charts that highlight the best and worst performing countries for each indicator.
-     Use contrasting colors to emphasize the top and bottom performers. - Ranking
-     Tables: Create tables or bar charts that rank countries based on their performance
-     for each indicator. This can help quickly identify the best and worst performers.
 
 - MEETING ON 28/5 (brainstorming in order to narrow down 1/2 areas of interest for the
   paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit
