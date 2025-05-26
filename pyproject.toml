@@ -118,6 +118,8 @@ extend-ignore = [
     "TRY003", # Avoid specifying long messages outside the exception class
     "SIM118", # Use of `assert` detected
     "PERF401", # Use a list comprehension to create a transformed list
+    # "F841", # Local variable is assigned to but never used
+    "PLR2004", # Too many positional arguments in function definition
 ]
 
 [tool.ruff.lint.per-file-ignores]

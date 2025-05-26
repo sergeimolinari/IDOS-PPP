@@ -206,17 +206,17 @@ def task_plot_interactive_plots_lebanon_and_yemen(
     data = pd.read_pickle(input_data)
     data = data.reset_index()
     output_dir = BLD / "final" / "lebanon_and_yemen" / "interactive_plots"
-    plot_interactive_plots(data, three_p_indexes, output_dir, list_name = "lebanon_and_yemen")
+    plot_interactive_plots(
+        data, three_p_indexes, output_dir, list_name="lebanon_and_yemen"
+    )
 
 
 products_interactive_plots = []
 for list_name in inputs_plots:
     products_interactive_plots.append(
-        BLD
-        / "final"
-        / "interactive_line_plots"
-        / f"{list_name}_interactive_plot.html",
+        BLD / "final" / "interactive_line_plots" / f"{list_name}_interactive_plot.html",
     )
+
 
 def task_plot_interactive_plots(
     input_data=inputs_plots,
