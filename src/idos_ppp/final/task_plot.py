@@ -191,7 +191,7 @@ def task_plot_comparative_bar_charts(
 # Create interactive plots using Plotly to allow to explore the data dynamically.
 
 
-def task_plot_interactive_plots(
+def task_plot_interactive_plots_lebanon_and_yemen(
     input_data=BLD
     / "data"
     / "subsets"
@@ -200,10 +200,31 @@ def task_plot_interactive_plots(
     / "final"
     / "lebanon_and_yemen"
     / "interactive_plots"
-    / "conflict_and_postconflict_countries_interactive_plot.html",
+    / "lebanon_and_yemen_interactive_plot.html",
 ):
-    """Task to plot interactive plots for each dataset over the years."""
+    """Task to plot interactive plots for conflict and post-conflict countries over the years."""
     data = pd.read_pickle(input_data)
     data = data.reset_index()
     output_dir = BLD / "final" / "lebanon_and_yemen" / "interactive_plots"
-    plot_interactive_plots(data, three_p_indexes, output_dir)
+    plot_interactive_plots(data, three_p_indexes, output_dir, list_name = "lebanon_and_yemen")
+
+
+products_interactive_plots = []
+for list_name in inputs_plots:
+    products_interactive_plots.append(
+        BLD
+        / "final"
+        / "interactive_line_plots"
+        / f"{list_name}_interactive_plot.html",
+    )
+
+def task_plot_interactive_plots(
+    input_data=inputs_plots,
+    produces=products_interactive_plots,
+):
+    """Task to plot interactive plots for each dataset over the years."""
+    for list_name, data_path in input_data.items():
+        data = pd.read_pickle(data_path)
+        data = data.reset_index()
+        output_html_file_path = BLD / "final" / "interactive_line_plots"
+        plot_interactive_plots(data, three_p_indexes, output_html_file_path, list_name)

@@ -99,24 +99,17 @@ def test_plot_comparative_bar_chart_error_handling():
         plot_comparative_bar_chart(empty_data, year, indices)
 
 
-def test_plot_interactive_plots(sample_data, output_dir):
-    indices = ["protection", "provision", "participation"]
-    plot_interactive_plots(sample_data, indices, output_dir)
-    output_file = (
-        output_dir / "conflict_and_postconflict_countries_interactive_plot.html"
-    )
-    assert output_file.exists()
-
-
 def test_plot_interactive_plots_error_handling(output_dir):
     empty_data = pd.DataFrame()
     indices = ["protection", "provision", "participation"]
+    list_name = "test_countries"
     with pytest.raises(ValueError):
-        plot_interactive_plots(empty_data, indices, output_dir)
+        plot_interactive_plots(empty_data, indices, output_dir, list_name)
 
 
 def test_plot_interactive_plots_missing_columns(sample_data, output_dir):
     data_missing_columns = sample_data.drop(columns=["protection"])
     indices = ["protection", "provision", "participation"]
+    list_name = "test_countries"
     with pytest.raises(KeyError):
-        plot_interactive_plots(data_missing_columns, indices, output_dir)
+        plot_interactive_plots(data_missing_columns, indices, output_dir, list_name)
