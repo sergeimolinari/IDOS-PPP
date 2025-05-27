@@ -56,7 +56,8 @@ def plot_correlation(data, output_dir):
 
     folder_name = output_dir.parent.name.replace("_", " ")
 
-    data = data.reset_index()
+    if "year" not in data.columns:
+        data = data.reset_index()
 
     plt.figure(figsize=(10, 6))
 
