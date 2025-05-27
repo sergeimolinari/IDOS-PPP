@@ -25,6 +25,7 @@ def test_calculate_prot_prov_yearly_correlations_expected_columns(sample_data):
     result = calculate_yearly_prot_prov_correlations(sample_data)
     assert "year" in result.columns
     assert "correlation" in result.columns
+    assert "p_value" in result.columns
     assert not result.empty
 
 
@@ -33,12 +34,14 @@ def test_calculate_prot_prov_yearly_continent_correlations_expected_columns(samp
     assert "year" in result.columns
     assert "continent" in result.columns
     assert "correlation" in result.columns
+    assert "p_value" in result.columns
     assert not result.empty
 
 def test_calculate_prov_part_yearly_correlations_expected_columns(sample_data):
     result = calculate_yearly_prov_part_correlations(sample_data)
     assert "year" in result.columns
     assert "correlation" in result.columns
+    assert "p_value" in result.columns
     assert not result.empty
 
 
@@ -47,6 +50,7 @@ def test_calculate_prov_part_yearly_continent_correlations_expected_columns(samp
     assert "year" in result.columns
     assert "continent" in result.columns
     assert "correlation" in result.columns
+    assert "p_value" in result.columns
     assert not result.empty
 
 
