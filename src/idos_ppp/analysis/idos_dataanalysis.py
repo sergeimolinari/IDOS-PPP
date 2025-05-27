@@ -29,8 +29,9 @@ def calculate_yearly_prot_prov_correlations(data):
         return pd.Series({"correlation": correlation, "p_value": p_value})
 
     # This function from the scipy.stats module calculates the Pearson correlation coefficient and the p-value for testing the null hypothesis that the correlation is zero.
-    # High p-value (typically > 0.05): Suggests that the observed correlation is not statistically significant.
-    # This means there is weak evidence to reject the null hypothesis, indicating that any observed correlation might be due to random chance.
+    # The p-value represents the probability of observing the data, or something more extreme, assuming that the null hypothesis is true (H0: corr = 0).
+    # A p-value less than 0.1 indicates that there is less than a 10% chance of observing the data, or something more extreme, if the null hypothesis is true.
+    # In other words, there is a relatively low probability that the observed correlation is due to random chance.
 
     yearly_correlations = yearly_data.apply(calculate_correlation_and_p_value)
 

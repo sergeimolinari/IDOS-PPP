@@ -4,9 +4,7 @@
 
 # NEXT STEPS
 
-- KEEP ON PRODUCING GRAPHS / PLOTS (possibly for a presentation)
-
-- Add tests for correlation plots and GROWTH + PRESENTATION.
+- GROWTH + PRESENTATION.
 
 - Here are some cool visualization ideas using matplotlib and seaborn to effectively
   present your data:

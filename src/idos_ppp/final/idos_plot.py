@@ -60,8 +60,8 @@ def plot_correlation(data, output_dir):
         data = data.reset_index()
 
     filtered_data = data[
-        (data["correlation"] < 0.2)
-        | (data["correlation"] > 0.8)
+        (abs(data["correlation"]) < 0.2)
+        | (abs(data["correlation"]) > 0.8)
         | (data["p_value"] < 0.1)
     ]
 
@@ -74,7 +74,7 @@ def plot_correlation(data, output_dir):
         cmap="viridis",
     )
 
-    pessimistic_data = filtered_data[filtered_data["correlation"] < 0.2]
+    pessimistic_data = filtered_data[abs(filtered_data["correlation"]) < 0.2]
     plt.scatter(
         pessimistic_data["year"],
         pessimistic_data["correlation"],
@@ -83,7 +83,7 @@ def plot_correlation(data, output_dir):
         zorder=5,
     )
 
-    optimistic_data = filtered_data[filtered_data["correlation"] > 0.8]
+    optimistic_data = filtered_data[abs(filtered_data["correlation"]) > 0.8]
     plt.scatter(
         optimistic_data["year"],
         optimistic_data["correlation"],
