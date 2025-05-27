@@ -5,6 +5,7 @@ from src.idos_ppp.final.idos_plot import (
     plot_boxplots,
     plot_comparative_bar_chart,
     plot_correlation,
+    plot_growth_interactive_plots,
     plot_trends_interactive_plots,
 )
 from src.idos_ppp.parameters import three_p_indexes
@@ -30,6 +31,20 @@ def sample_correlation_data():
         "year": [2007, 2010, 2013, 2016, 2019],
         "correlation": [0.1, 0.3, 0.5, 0.7, 0.9],
         "p_value": [0.05, 0.15, 0.01, 0.2, 0.03],
+    }
+    return pd.DataFrame(data)
+
+
+@pytest.fixture
+def sample_growth_data():
+    data = {
+        "year": [2020, 2020, 2021, 2021],
+        "continent": ["Africa", "Asia", "Africa", "Asia"],
+        "country_alpha3": ["ITA", "CHN", "DEU", "IND"],
+        "country_name": ["Italy", "China", "Germany", "India"],
+        "protection_growth": [1.5, 0.7, 0.9, 2.5],
+        "provision_growth": [0.5, 1.7, 0.3, 0.5],
+        "participation_growth": [1.3, 0.1, 0.8, 1.2],
     }
     return pd.DataFrame(data)
 
@@ -100,7 +115,7 @@ def test_plot_comparative_bar_chart_error_handling():
         plot_comparative_bar_chart(empty_data, year, indices)
 
 
-def test_plot_interactive_plots_error_handling(output_dir):
+def test_trends_interactive_plots_error_handling(output_dir):
     empty_data = pd.DataFrame()
     indices = ["protection", "provision", "participation"]
     list_name = "test_countries"
@@ -108,11 +123,32 @@ def test_plot_interactive_plots_error_handling(output_dir):
         plot_trends_interactive_plots(empty_data, indices, output_dir, list_name)
 
 
-def test_plot_interactive_plots_missing_columns(sample_data, output_dir):
+def test_trends_interactive_plots_missing_columns(sample_data, output_dir):
     data_missing_columns = sample_data.drop(columns=["protection"])
     indices = ["protection", "provision", "participation"]
     list_name = "test_countries"
     with pytest.raises(KeyError):
         plot_trends_interactive_plots(
+            data_missing_columns, indices, output_dir, list_name
+        )
+
+
+three_p_indexes_growth = [index + "_growth" for index in three_p_indexes]
+
+
+def test_growth_interactive_plots_error_handling(output_dir):
+    empty_data = pd.DataFrame()
+    indices = three_p_indexes_growth
+    list_name = "test_countries"
+    with pytest.raises(ValueError):
+        plot_growth_interactive_plots(empty_data, indices, output_dir, list_name)
+
+
+def test_growth_interactive_plots_missing_columns(sample_growth_data, output_dir):
+    data_missing_columns = sample_growth_data.drop(columns=["protection_growth"])
+    indices = three_p_indexes_growth
+    list_name = "test_countries"
+    with pytest.raises(KeyError):
+        plot_growth_interactive_plots(
             data_missing_columns, indices, output_dir, list_name
         )
