@@ -29,6 +29,7 @@ def sample_correlation_data():
     data = {
         "year": [2007, 2010, 2013, 2016, 2019],
         "correlation": [0.1, 0.3, 0.5, 0.7, 0.9],
+        "p_value": [0.05, 0.15, 0.01, 0.2, 0.03],
     }
     return pd.DataFrame(data)
 
@@ -83,8 +84,8 @@ def test_plot_correlation_missing_columns(sample_correlation_data, output_dir):
 
 
 def test_plot_correlation_highlighting(sample_correlation_data, output_dir):
-    sample_correlation_data.loc[len(sample_correlation_data)] = [2022, 0.1]
-    sample_correlation_data.loc[len(sample_correlation_data)] = [2023, 0.9]
+    sample_correlation_data.loc[len(sample_correlation_data)] = [2022, 0.1, 0.05]
+    sample_correlation_data.loc[len(sample_correlation_data)] = [2023, 0.9, 0.01]
 
     plot_correlation(sample_correlation_data, output_dir)
     output_file = output_dir / f"{output_dir.name}_correlation.png"
