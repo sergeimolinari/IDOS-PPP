@@ -43,7 +43,7 @@ def plot_boxplots(data, output_dir):
 
 
 def plot_correlation(data, output_dir):
-    """Plot correlation values over the years and highlight pessimistic and optimistic values.
+    """Plot correlation values over the years and highlight pessimistic and optimistic values, as well as observations with low p-values.
 
     Arguments:
     - data: pd.DataFrame containing the raw data.
@@ -59,13 +59,22 @@ def plot_correlation(data, output_dir):
     if "year" not in data.columns:
         data = data.reset_index()
 
+    filtered_data = data[
+        (data["correlation"] < 0.2)
+        | (data["correlation"] > 0.8)
+        | (data["p_value"] < 0.1)
+    ]
+
     plt.figure(figsize=(10, 6))
 
     plt.scatter(
-        data["year"], data["correlation"], c=data["correlation"], cmap="viridis"
+        filtered_data["year"],
+        filtered_data["correlation"],
+        c=filtered_data["correlation"],
+        cmap="viridis",
     )
 
-    pessimistic_data = data[data["correlation"] < 0.2]
+    pessimistic_data = filtered_data[filtered_data["correlation"] < 0.2]
     plt.scatter(
         pessimistic_data["year"],
         pessimistic_data["correlation"],
@@ -74,7 +83,7 @@ def plot_correlation(data, output_dir):
         zorder=5,
     )
 
-    optimistic_data = data[data["correlation"] > 0.8]
+    optimistic_data = filtered_data[filtered_data["correlation"] > 0.8]
     plt.scatter(
         optimistic_data["year"],
         optimistic_data["correlation"],
@@ -83,8 +92,30 @@ def plot_correlation(data, output_dir):
         zorder=5,
     )
 
+    # Highlight data with low p-values
+    low_p_value_data = filtered_data[filtered_data["p_value"] < 0.1]
+    plt.scatter(
+        low_p_value_data["year"],
+        low_p_value_data["correlation"],
+        color="purple",
+        label="Low p-value (< 0.1)",
+        zorder=5,
+    )
+
     plt.xlabel("Year")
     plt.title(f"{folder_name.title()} of {dataset_name.title()} Over The Years")
+
+    # Add description about high p-values
+    description = "Low p-values (typically < 0.1): Indicate strong evidence against the null hypothesis (H0: corr = 0)."
+    plt.figtext(
+        0.5,
+        0.01,
+        description,
+        ha="center",
+        fontsize=10,
+        bbox={"facecolor": "orange", "alpha": 0.5, "pad": 5},
+    )
+
     plt.legend()
 
     output_png_file_path = output_dir / f"{output_dir.name}_correlation.png"
