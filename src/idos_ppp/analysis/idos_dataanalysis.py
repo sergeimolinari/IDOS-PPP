@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+from scipy.stats import pearsonr
 
 pd.options.mode.copy_on_write = True
 pd.options.future.infer_string = True
@@ -20,10 +22,20 @@ def calculate_yearly_prot_prov_correlations(data):
 
     yearly_data = data.groupby("year")[["protection", "provision"]]
 
-    yearly_correlations = yearly_data.apply(lambda x: x.corr().iloc[0, 1])
+    def calculate_correlation_and_p_value(group):
+        if len(group['protection']) < 2 or len(group['provision']) < 2:
+            return pd.Series({"correlation": np.nan, "p_value": np.nan})
+        correlation, p_value = pearsonr(group['protection'], group['provision'])
+        return pd.Series({"correlation": correlation, "p_value": p_value})
+    
+    # This function from the scipy.stats module calculates the Pearson correlation coefficient and the p-value for testing the null hypothesis that the correlation is zero.
+    # High p-value (typically > 0.05): Suggests that the observed correlation is not statistically significant.
+    # This means there is weak evidence to reject the null hypothesis, indicating that any observed correlation might be due to random chance.
+
+    yearly_correlations = yearly_data.apply(calculate_correlation_and_p_value)
 
     yearly_correlations_df = pd.DataFrame(
-        {"year": yearly_correlations.index, "correlation": yearly_correlations.values}
+        {"year": yearly_correlations.index, "correlation": yearly_correlations["correlation"], "p_value": yearly_correlations["p_value"]}
     )
 
     return yearly_correlations_df
@@ -42,10 +54,16 @@ def calculate_yearly_prot_prov_continent_correlations(data):
 
     grouped_data = data.groupby(["year", "continent"])[["protection", "provision"]]
 
-    correlations = grouped_data.apply(lambda x: x.corr().iloc[0, 1])
+    def calculate_correlation_and_p_value(group):
+        if len(group['protection']) < 2 or len(group['provision']) < 2:
+            return pd.Series({"correlation": np.nan, "p_value": np.nan})
+        correlation, p_value = pearsonr(group['protection'], group['provision'])
+        return pd.Series({"correlation": correlation, "p_value": p_value})
+
+    correlations = grouped_data.apply(calculate_correlation_and_p_value)
 
     correlations_df = correlations.reset_index()
-    correlations_df.columns = ["year", "continent", "correlation"]
+    correlations_df.columns = ["year", "continent", "correlation", "p_value"]
 
     return correlations_df
 
@@ -66,10 +84,18 @@ def calculate_yearly_prov_part_correlations(data):
 
     yearly_data = data.groupby("year")[["provision", "participation"]]
 
-    yearly_correlations = yearly_data.apply(lambda x: x.corr().iloc[0, 1])
+    def calculate_correlation_and_p_value(group):
+        if len(group['participation']) < 2 or len(group['provision']) < 2:
+            return pd.Series({"correlation": np.nan, "p_value": np.nan})
+        correlation, p_value = pearsonr(group['provision'], group['participation'])
+        return pd.Series({"correlation": correlation, "p_value": p_value})
+    
+    # This function from the scipy.stats module calculates the Pearson correlation coefficient and the p-value for testing the null hypothesis that the correlation is zero.
+
+    yearly_correlations = yearly_data.apply(calculate_correlation_and_p_value)
 
     yearly_correlations_df = pd.DataFrame(
-        {"year": yearly_correlations.index, "correlation": yearly_correlations.values}
+        {"year": yearly_correlations.index, "correlation": yearly_correlations["correlation"], "p_value": yearly_correlations["p_value"]}
     )
 
     return yearly_correlations_df
@@ -88,10 +114,16 @@ def calculate_yearly_prov_part_continent_correlations(data):
 
     grouped_data = data.groupby(["year", "continent"])[["provision", "participation"]]
 
-    correlations = grouped_data.apply(lambda x: x.corr().iloc[0, 1])
+    def calculate_correlation_and_p_value(group):
+        if len(group['provision']) < 2 or len(group['participation']) < 2:
+            return pd.Series({"correlation": np.nan, "p_value": np.nan})
+        correlation, p_value = pearsonr(group['provision'], group['participation'])
+        return pd.Series({"correlation": correlation, "p_value": p_value})
+
+    correlations = grouped_data.apply(calculate_correlation_and_p_value)
 
     correlations_df = correlations.reset_index()
-    correlations_df.columns = ["year", "continent", "correlation"]
+    correlations_df.columns = ["year", "continent", "correlation", "p_value"]
 
     return correlations_df
 
@@ -112,10 +144,18 @@ def calculate_yearly_prot_part_correlations(data):
 
     yearly_data = data.groupby("year")[["protection", "participation"]]
 
-    yearly_correlations = yearly_data.apply(lambda x: x.corr().iloc[0, 1])
+    def calculate_correlation_and_p_value(group):
+        if len(group['protection']) < 2 or len(group['participation']) < 2:
+            return pd.Series({"correlation": np.nan, "p_value": np.nan})
+        correlation, p_value = pearsonr(group['protection'], group['participation'])
+        return pd.Series({"correlation": correlation, "p_value": p_value})
+    
+    # This function from the scipy.stats module calculates the Pearson correlation coefficient and the p-value for testing the null hypothesis that the correlation is zero.
+
+    yearly_correlations = yearly_data.apply(calculate_correlation_and_p_value)
 
     yearly_correlations_df = pd.DataFrame(
-        {"year": yearly_correlations.index, "correlation": yearly_correlations.values}
+        {"year": yearly_correlations.index, "correlation": yearly_correlations["correlation"], "p_value": yearly_correlations["p_value"]}
     )
 
     return yearly_correlations_df
@@ -134,10 +174,16 @@ def calculate_yearly_prot_part_continent_correlations(data):
 
     grouped_data = data.groupby(["year", "continent"])[["protection", "participation"]]
 
-    correlations = grouped_data.apply(lambda x: x.corr().iloc[0, 1])
+    def calculate_correlation_and_p_value(group):
+        if len(group['protection']) < 2 or len(group['participation']) < 2:
+            return pd.Series({"correlation": np.nan, "p_value": np.nan})
+        correlation, p_value = pearsonr(group['protection'], group['participation'])
+        return pd.Series({"correlation": correlation, "p_value": p_value})
+
+    correlations = grouped_data.apply(calculate_correlation_and_p_value)
 
     correlations_df = correlations.reset_index()
-    correlations_df.columns = ["year", "continent", "correlation"]
+    correlations_df.columns = ["year", "continent", "correlation", "p_value"]
 
     return correlations_df
 
