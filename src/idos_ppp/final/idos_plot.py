@@ -177,7 +177,6 @@ def plot_trends_interactive_plots(data, indices, output_dir, list_name):
     _fail_if_not_dataframe(data)
     _fail_if_empty_dataframe(data)
 
-    # Melt the data for plotting
     melted_data = data.melt(
         id_vars=["country_name", "year"],
         value_vars=indices,
@@ -187,7 +186,6 @@ def plot_trends_interactive_plots(data, indices, output_dir, list_name):
 
     countries = melted_data["country_name"].unique()
 
-    # Create interactive line plots
     fig = px.line(
         melted_data,
         x="year",
@@ -198,7 +196,6 @@ def plot_trends_interactive_plots(data, indices, output_dir, list_name):
         hover_name="Index",
     )
 
-    # Add a vertical dashed line at the year 2011
     fig.add_vline(
         x=2011,
         line_width=3,
@@ -208,7 +205,6 @@ def plot_trends_interactive_plots(data, indices, output_dir, list_name):
         annotation_position="bottom left",
     )
 
-    # Customize legend labels
     fig.for_each_trace(
         lambda t: t.update(
             name=t.name.replace("country_name=", "Country Name: ")
@@ -217,7 +213,6 @@ def plot_trends_interactive_plots(data, indices, output_dir, list_name):
         )
     )
 
-    # Update the title to reflect multiple countries
     if len(countries) > 2:
         fig.update_layout(title="Trends of 3P Indices Over Time")
     elif len(countries) == 2:
@@ -228,6 +223,73 @@ def plot_trends_interactive_plots(data, indices, output_dir, list_name):
         fig.update_layout(title=f"Trends of 3P Indices Over Time for {countries[0]}")
 
     fig.write_html(output_dir / f"{list_name}_interactive_plot.html")
+
+
+# Create interactive plots using Plotly to allow to explore the growth datasets dynamically.
+
+
+def plot_growth_interactive_plots(data, indices, output_dir, list_name):
+    """Plot interactive plots for the given growth indices over time for the considered countries.
+
+    Arguments:
+    - data: pd.DataFrame containing the filtered data.
+    - indices: list containing the growth indices to plot.
+    - output_dir: Path, directory to save the output plots.
+    - list_name: str, name of the list to use in the output file name.
+    """
+    _fail_if_not_dataframe(data)
+    _fail_if_empty_dataframe(data)
+
+    melted_data = data.melt(
+        id_vars=["country_name", "year"],
+        value_vars=indices,
+        var_name="Index",
+        value_name="Value",
+    )
+
+    countries = melted_data["country_name"].unique()
+
+    fig = px.line(
+        melted_data,
+        x="year",
+        y="Value",
+        color="country_name",
+        line_group="Index",
+        line_dash="Index",
+        hover_name="Index",
+    )
+
+    fig.add_vline(
+        x=2011,
+        line_width=3,
+        line_dash="dash",
+        line_color="orange",
+        annotation_text="2011",
+        annotation_position="bottom left",
+    )
+
+    fig.add_hline(y=1.1, line_width=6, line_dash="dash", line_color="green")
+
+    fig.add_hline(y=0.9, line_width=6, line_dash="dash", line_color="red")
+
+    fig.for_each_trace(
+        lambda t: t.update(
+            name=t.name.replace("country_name=", "Country Name: ")
+            .replace("Index=", "")
+            .title()
+        )
+    )
+
+    if len(countries) > 2:
+        fig.update_layout(title="Growth of 3P Indices Over Time")
+    elif len(countries) == 2:
+        fig.update_layout(
+            title=f"Growth of 3P Indices Over Time for {countries[0]} and {countries[1]}"
+        )
+    else:
+        fig.update_layout(title=f"Growth of 3P Indices Over Time for {countries[0]}")
+
+    fig.write_html(output_dir / f"{list_name}_growth_interactive_plot.html")
 
 
 # Error handling functions

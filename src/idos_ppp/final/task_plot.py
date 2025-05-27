@@ -8,6 +8,7 @@ from idos_ppp.final.idos_plot import (
     plot_boxplots,
     plot_comparative_bar_chart,
     plot_correlation,
+    plot_growth_interactive_plots,
     plot_trends_interactive_plots,
 )
 from idos_ppp.parameters import country_lists, three_p_indexes, years
@@ -33,6 +34,7 @@ inputs_prot_prov_correlations["merged_dataframe_countries"] = (
     / "merged_dataframe_yearly_prot_prov_correlations.pkl"
 )
 
+
 inputs_prov_part_correlations = {
     list_name: BLD
     / "analysis"
@@ -47,6 +49,7 @@ inputs_prov_part_correlations["merged_dataframe_countries"] = (
     / "merged_dataframe_yearly_prov_part_correlations.pkl"
 )
 
+
 inputs_prot_part_correlations = {
     list_name: BLD
     / "analysis"
@@ -59,6 +62,15 @@ inputs_prot_part_correlations["merged_dataframe_countries"] = (
     / "analysis"
     / "prot_part_correlations"
     / "merged_dataframe_yearly_prot_part_correlations.pkl"
+)
+
+
+inputs_growth_plots = {
+    list_name: BLD / "analysis" / "growth" / f"{list_name}_growth_data.pkl"
+    for list_name in country_lists.keys()
+}
+inputs_growth_plots["merged_dataframe_countries"] = (
+    BLD / "analysis" / "growth" / "merged_dataframe_growth_data.pkl"
 )
 
 
@@ -211,16 +223,16 @@ def task_trends_interactive_plots_lebanon_and_yemen(
     )
 
 
-products_interactive_plots = []
+products_trends_interactive_plots = []
 for list_name in inputs_plots:
-    products_interactive_plots.append(
+    products_trends_interactive_plots.append(
         BLD / "final" / "interactive_line_plots" / f"{list_name}_interactive_plot.html",
     )
 
 
 def task_trends_interactive_plots(
     input_data=inputs_plots,
-    produces=products_interactive_plots,
+    produces=products_trends_interactive_plots,
 ):
     """Task to plot interactive plots for each dataset over the years."""
     for list_name, data_path in input_data.items():
@@ -229,4 +241,48 @@ def task_trends_interactive_plots(
         output_html_file_path = BLD / "final" / "interactive_line_plots"
         plot_trends_interactive_plots(
             data, three_p_indexes, output_html_file_path, list_name
+        )
+
+
+three_p_indexes_growth = [index + "_growth" for index in three_p_indexes]
+
+
+def task_growth_interactive_plots_lebanon_and_yemen(
+    input_data=BLD
+    / "analysis"
+    / "growth"
+    / "conflict_and_postconflict_countries_growth_data.pkl",
+    produces=BLD
+    / "final"
+    / "lebanon_and_yemen"
+    / "growth_plots"
+    / "lebanon_and_yemen_growth_interactive_plot.html",
+):
+    """Task to plot growth interactive plots for conflict and post-conflict countries over the years."""
+    data = pd.read_pickle(input_data)
+    data = data.reset_index()
+    output_dir = BLD / "final" / "lebanon_and_yemen" / "growth_plots"
+    plot_growth_interactive_plots(
+        data, three_p_indexes_growth, output_dir, list_name="lebanon_and_yemen"
+    )
+
+
+products_growth_interactive_plots = []
+for list_name in inputs_growth_plots:
+    products_growth_interactive_plots.append(
+        BLD / "final" / "growth_plots" / f"{list_name}_growth_interactive_plot.html",
+    )
+
+
+def task_growth_interactive_plots(
+    input_data=inputs_growth_plots,
+    produces=products_growth_interactive_plots,
+):
+    """Task to plot growth interactive plots for each dataset over the years."""
+    for list_name, data_path in input_data.items():
+        data = pd.read_pickle(data_path)
+        data = data.reset_index()
+        output_html_file_path = BLD / "final" / "growth_plots"
+        plot_growth_interactive_plots(
+            data, three_p_indexes_growth, output_html_file_path, list_name
         )

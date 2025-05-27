@@ -6,21 +6,11 @@
 
 - GROWTH + PRESENTATION.
 
-- Here are some cool visualization ideas using matplotlib and seaborn to effectively
-  present your data:
-
-  - Growth Data Visualization - Heatmap with Color Coding: Use a heatmap to visualize
-    growth data, with colors indicating growth levels. Use green for values above 1.1
-    (positive growth) and red for values below 0.9 (negative growth). This can help
-    highlight countries with significant changes. - Line Plot with Highlights: Create a
-    line plot for each country's growth over time, with markers or annotations to
-    highlight years with significant changes (either above 1.1 or below 0.9).
-
 - MEETING ON 28/5 (brainstorming in order to narrow down 1/2 areas of interest for the
   paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit
   hooks. How revolutions changed indicators -> difference between years (RDD and DiD) ->
   there are differences in sheet “PROT” from column Q (in green extreme changes) ->
-  observations and maybe motivation. Maybe also boxplots for stat analysis (?)
+  observations and maybe motivation. Maybe also boxplots for stat analysis
 
 - Conflict / Post-conflict was a bit diappointing: only Yemen is part of the
   "conflict_countries", and Lebanon is the only other country in the
