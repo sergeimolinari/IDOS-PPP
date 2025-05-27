@@ -165,7 +165,7 @@ def plot_comparative_bar_chart(data, year, indices):
 # Create interactive plots using Plotly to allow to explore the data dynamically.
 
 
-def plot_interactive_plots(data, indices, output_dir, list_name):
+def plot_trends_interactive_plots(data, indices, output_dir, list_name):
     """Plot interactive plots for the given indices over time for the considered countries.
 
     Arguments:

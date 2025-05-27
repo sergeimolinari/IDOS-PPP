@@ -8,7 +8,7 @@ from idos_ppp.final.idos_plot import (
     plot_boxplots,
     plot_comparative_bar_chart,
     plot_correlation,
-    plot_interactive_plots,
+    plot_trends_interactive_plots,
 )
 from idos_ppp.parameters import country_lists, three_p_indexes, years
 
@@ -191,7 +191,7 @@ def task_plot_comparative_bar_charts(
 # Create interactive plots using Plotly to allow to explore the data dynamically.
 
 
-def task_plot_interactive_plots_lebanon_and_yemen(
+def task_trends_interactive_plots_lebanon_and_yemen(
     input_data=BLD
     / "data"
     / "subsets"
@@ -206,7 +206,7 @@ def task_plot_interactive_plots_lebanon_and_yemen(
     data = pd.read_pickle(input_data)
     data = data.reset_index()
     output_dir = BLD / "final" / "lebanon_and_yemen" / "interactive_plots"
-    plot_interactive_plots(
+    plot_trends_interactive_plots(
         data, three_p_indexes, output_dir, list_name="lebanon_and_yemen"
     )
 
@@ -218,7 +218,7 @@ for list_name in inputs_plots:
     )
 
 
-def task_plot_interactive_plots(
+def task_trends_interactive_plots(
     input_data=inputs_plots,
     produces=products_interactive_plots,
 ):
@@ -227,4 +227,6 @@ def task_plot_interactive_plots(
         data = pd.read_pickle(data_path)
         data = data.reset_index()
         output_html_file_path = BLD / "final" / "interactive_line_plots"
-        plot_interactive_plots(data, three_p_indexes, output_html_file_path, list_name)
+        plot_trends_interactive_plots(
+            data, three_p_indexes, output_html_file_path, list_name
+        )
