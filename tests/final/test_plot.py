@@ -5,7 +5,7 @@ from src.idos_ppp.final.idos_plot import (
     plot_boxplots,
     plot_comparative_bar_chart,
     plot_correlation,
-    plot_interactive_plots,
+    plot_trends_interactive_plots,
 )
 from src.idos_ppp.parameters import three_p_indexes
 
@@ -105,7 +105,7 @@ def test_plot_interactive_plots_error_handling(output_dir):
     indices = ["protection", "provision", "participation"]
     list_name = "test_countries"
     with pytest.raises(ValueError):
-        plot_interactive_plots(empty_data, indices, output_dir, list_name)
+        plot_trends_interactive_plots(empty_data, indices, output_dir, list_name)
 
 
 def test_plot_interactive_plots_missing_columns(sample_data, output_dir):
@@ -113,4 +113,6 @@ def test_plot_interactive_plots_missing_columns(sample_data, output_dir):
     indices = ["protection", "provision", "participation"]
     list_name = "test_countries"
     with pytest.raises(KeyError):
-        plot_interactive_plots(data_missing_columns, indices, output_dir, list_name)
+        plot_trends_interactive_plots(
+            data_missing_columns, indices, output_dir, list_name
+        )
