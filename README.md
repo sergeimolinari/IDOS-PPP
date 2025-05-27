@@ -4,7 +4,7 @@
 
 # NEXT STEPS
 
-- GROWTH + PRESENTATION.
+- PRESENTATION
 
 - MEETING ON 28/5 (brainstorming in order to narrow down 1/2 areas of interest for the
   paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit
