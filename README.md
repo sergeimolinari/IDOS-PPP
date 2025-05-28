@@ -4,24 +4,21 @@
 
 # NEXT STEPS
 
-- PRESENTATION
+- Update data for protection in year 2007 (median to mean)
 
-- MEETING ON 28/5 (brainstorming in order to narrow down 1/2 areas of interest for the
-  paper) -> (significance, correlations, growth, …), VISUALIZATION (plots), pre-commit
-  hooks. How revolutions changed indicators -> difference between years (RDD and DiD) ->
-  there are differences in sheet “PROT” from column Q (in green extreme changes) ->
-  observations and maybe motivation. Maybe also boxplots for stat analysis
+- Brainstorming for independent variables -> difference between years (RDD and DiD) ->
+  observations and maybe motivation
 
-- Conflict / Post-conflict was a bit diappointing: only Yemen is part of the
-  "conflict_countries", and Lebanon is the only other country in the
-  "conflict_and_postconflict" list -> maybe comparison between Yemen (as only Conflict
-  Country) with Lebanon (as only Post-Conflict Country)?
+- Protest data ?
 
-- Much more interesting with GCC and Repressive Countries since we have data for all of
-  them.
+- When where the shocks for each country / region?
 
-- Comparison between continents, MENA, EU, GCC, Repressive and Conflict/Post-Conflict
-  Countries -> DATA VISUALIZATION
+- Changes for provision: was it one sub-index or a shift between different sub-indexes?
+
+- Find data for 2022
+
+- Add countries: analysis Sudan and South Sudan, and countries that were previously
+  removed
 
 - Remember:
 
