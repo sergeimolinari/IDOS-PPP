@@ -2,6 +2,30 @@
 
 # *Exploring the 3P Index: Data-Driven Insights for the MENA Team*
 
+# MEETING 28/5
+
+- Markus -> We have identified the following possible independent variables as possible
+  explaining ones:
+  - Growth (or change in growth)
+  - Revolutions, coups d’état, seizures of power,
+  - Wars, civil wars
+  - Terrorism
+  - Changes in the share of tax revues as a share of GDP
+  - Protests
+
+Please let us all think about:
+
+- Possible additional ones
+- Indicators to measure these variables
+
+In addition, Sergei will:
+
+- Try to add the data for 2022 for all three Ps for as many countries as possible.
+- Add at least 1-2Ps also for countries like Iraq where the data of 1-2 Ps are missing.
+- Add countries like South Sudan for the years for which we have data.
+- Double check the excel sheet if the issue about “median/average” has been settled now
+  everywhere in the excel file.
+
 # NEXT STEPS
 
 - Update data for protection in year 2007 (median to mean)
