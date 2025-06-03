@@ -113,8 +113,6 @@ the variables and implement the regression strategy if we agree on it?
 
 # NEXT STEPS
 
-- Update data for protection in year 2007 (median to mean)
-
 - Brainstorming for independent variables -> difference between years (RDD and DiD) ->
   observations and maybe motivation
 
