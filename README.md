@@ -6,25 +6,109 @@
 
 - Markus -> We have identified the following possible independent variables as possible
   explaining ones:
+
   - Growth (or change in growth)
   - Revolutions, coups d’état, seizures of power,
   - Wars, civil wars
   - Terrorism
   - Changes in the share of tax revues as a share of GDP
-  - Protests
+  - Protests Please let us all think about:
+  - Possible additional ones
+  - Indicators to measure these variables In addition, Sergei will:
+  - Try to add the data for 2022 for all three Ps for as many countries as possible.
+  - Add at least 1-2Ps also for countries like Iraq where the data of 1-2 Ps are
+    missing.
+  - Add countries like South Sudan for the years for which we have data.
+  - Double check the excel sheet if the issue about “median/average” has been settled
+    now everywhere in the excel file.
 
-Please let us all think about:
+- Amirah -> I am not sure we had planned to regress the index on growth or the change in
+  the index on growth? Anyways, I thought it over again and just a quick note regarding
+  the regression setup:
 
-- Possible additional ones
-- Indicators to measure these variables
+  - In case we regress the index on growth: regressing a level variable - such our index
+    measuring government service provision - on a change variable like annual GDP growth
+    can pose both conceptual and statistical challenges. The interpretation is not
+    always straightforward, as this regression assumes that short-term economic growth
+    leads directly to shifts in a stock or a structural outcome, which is unlikely to be
+    the case unless the index is highly responsive to economic cycles. Also, there’s a
+    potential mismatch in variable properties (levels vs. differences), which can lead
+    to spurious results, especially if the index trends over time while GDP growth
+    fluctuates. So it is more appropriate to regress changes in the index on GDP growth
+    (likely I just missed that in our meeting), or using lagged GDP growth as a
+    predictor of the index level to better capture delayed effects. I also realized that
+    if we use year fixed effects shocks in specific years will be accounted for (such as
+    the financial crisis and the COVID). It wasn’t clear that we plan to use fixed
+    effects (although quite challenging with such a small sample).
+  - In case we regress the ‘change’ in the index on growth: We will be faced with the v
+    limited variation in the dependent variable (ΔIndex) which we have already seen in
+    our results. This will reduce the statistical power of our regression. On the other
+    hand, we have high volatility in our independent variable (GDP growth): This large
+    fluctuation will likely introduce noise. Unless there's a strong, consistent
+    relationship, this volatility could weaken coefficient significance and increase
+    standard errors. Generally even if we do the change on change, government
+    deliverables evolve gradually while GDP growth is cyclical and volatile. This
+    mismatch could result in weak or insignificant correlations, especially over short
+    time spans. Though of course the changes across sample countries despite the
+    observations over time may produce reasonable results. So we can and should run the
+    regressions anyway but we should be prepared for unwanted results. In such a case it
+    maybe better to invest in interpreting the fantastic visual results produced
+    focusing on the observed interesting trends and outliers.
 
-In addition, Sergei will:
+- Amirah -> Please find below:
 
-- Try to add the data for 2022 for all three Ps for as many countries as possible.
-- Add at least 1-2Ps also for countries like Iraq where the data of 1-2 Ps are missing.
-- Add countries like South Sudan for the years for which we have data.
-- Double check the excel sheet if the issue about “median/average” has been settled now
-  everywhere in the excel file.
+  1. a list of potential control variables and reasons why they may be relevant
+  1. a suggestion for a good regression strategy. Markus will you please check and
+     re-confirm with Sergei.
+
+  - additional regressors/control variables - they should mainly “not” be correlated
+    with our main regressor GDP growth:
+    - Official Development Assistance (ODA): in low and middle -income countries, a
+      large share of service delivery maybe funded externally.
+    - log(population) and the urbanization level: population scale and density or the
+      scale and geography of the population could affect service delivery (e.g. per
+      capita coverage, logistical costs). level of urbanization measured as= (Urban
+      population/ Total population) x 100
+    - Institutional quality (Rule of Law, Government Effectiveness, Control of
+      Corruption, Democracy Index/regime type: from the World Governance Indicators):
+      strong institutions help translate GDP into actual service delivery. Countries
+      with same income levels may differ a lot in performance due to governance quality
+      and responsiveness.
+    - Demographics such as % of population under 15, that is the dependency ratio: young
+      populations require more education and health services, influencing both needs and
+      policy priorities (the assumption would be the higher the rate the more we should
+      observe gov provision.
+    - Fiscal capacity such as government spending as % of GDP, tax revenue as % of GDP:
+      GDP enables capacity, but actual government spending channels that capacity into
+      services (I have doubts about this one but worth it to look into it, I see also
+      the counter logic not to use it).
+    - Human capital indicators such as the literacy rate (or illiteracy for that matter)
+      and average years of schooling: These are both outcome variables but are also
+      “facilitators” of service provision, especially in health and education sectors
+      (the higher the easier is distribution so to speak).
+    - Conflict such as the presence of conflict, fragility index, or dummy for fragile
+      states: conflict-affected countries likely to experience service delivery
+      breakdowns regardless of GDP. This variable is included in our protection index
+      but not in the provision index so can be safely used as a regressor for the
+      Provision P.
+  - regression model: Despite the limited number of years we should make use of the
+    panel nature of our dataset as Markus has stressed several times. We should:
+    - Use panel data with country fixed effects to control for unobserved time-invariant
+      characteristics.
+    - Add year fixed effects to control for time shocks.
+    - Consider using clustered standard errors at the country level to account for
+      serial correlation.
+    - Since GDP growth is quite volatile we could lag GDP growth, so for example use
+      average growth over the past 2–3 years to reflect the delayed impact on government
+      capabilities.
+    - We should probably introduce the additional controls one after the other to see
+      how the regression changes with additions and to observe the robustness in our
+      variables. I just thought mostly about controls for the Provision P we should also
+      think about suitable controls for the other Ps. I will do so after my return from
+      my short holiday. So Markus (and Tina) please check and let us (particularly
+      Segei) know what you think and whether you would like to further discuss any
+      aspect. Sergei will you be able to get the variables and implement the regression
+      strategy if we agree on it?
 
 # NEXT STEPS
 
