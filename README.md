@@ -103,12 +103,13 @@
       capabilities.
     - We should probably introduce the additional controls one after the other to see
       how the regression changes with additions and to observe the robustness in our
-      variables. I just thought mostly about controls for the Provision P we should also
-      think about suitable controls for the other Ps. I will do so after my return from
-      my short holiday. So Markus (and Tina) please check and let us (particularly
-      Sergei) know what you think and whether you would like to further discuss any
-      aspect. Sergei will you be able to get the variables and implement the regression
-      strategy if we agree on it?
+      variables.
+
+I just thought mostly about controls for the Provision P we should also think about
+suitable controls for the other Ps. I will do so after my return from my short holiday.
+So Markus (and Tina) please check and let us (particularly Sergei) know what you think
+and whether you would like to further discuss any aspect. Sergei will you be able to get
+the variables and implement the regression strategy if we agree on it?
 
 # NEXT STEPS
 
