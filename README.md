@@ -117,7 +117,7 @@
 - Brainstorming for independent variables -> difference between years (RDD and DiD) ->
   observations and maybe motivation
 
-- Protest data ?
+- Protest data from Tina ?
 
 - When where the shocks for each country / region?
 
