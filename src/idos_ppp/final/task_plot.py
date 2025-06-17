@@ -177,7 +177,7 @@ for year in years:
     products_comparative_bar_charts.append(
         BLD
         / "final"
-        / "lebanon_and_yemen"
+        / "conflict_and_postconflict_countries"
         / "comparative_bar_charts"
         / f"bar_chart_{year}.png",
     )
@@ -193,7 +193,7 @@ def task_plot_comparative_bar_charts(
     """Task to plot comparative bar charts for each dataset over the years."""
     data = pd.read_pickle(input_data)
     data = data.reset_index()
-    output_dir = BLD / "final" / "lebanon_and_yemen" / "comparative_bar_charts"
+    output_dir = BLD / "final" / "conflict_and_postconflict_countries" / "comparative_bar_charts"
     for year in years:
         plot_comparative_bar_chart(data, year, three_p_indexes)
         plt.savefig(output_dir / f"bar_chart_{year}.png")
@@ -202,7 +202,7 @@ def task_plot_comparative_bar_charts(
 
 # Create interactive plots using Plotly to allow to explore the data dynamically.
 
-
+'''
 def task_trends_interactive_plots_lebanon_and_yemen(
     input_data=BLD
     / "data"
@@ -221,7 +221,7 @@ def task_trends_interactive_plots_lebanon_and_yemen(
     plot_trends_interactive_plots(
         data, three_p_indexes, output_dir, list_name="lebanon_and_yemen"
     )
-
+'''
 
 products_trends_interactive_plots = []
 for list_name in inputs_plots:
@@ -246,7 +246,7 @@ def task_trends_interactive_plots(
 
 three_p_indexes_growth = [index + "_growth" for index in three_p_indexes]
 
-
+'''
 def task_growth_interactive_plots_lebanon_and_yemen(
     input_data=BLD
     / "analysis"
@@ -265,7 +265,7 @@ def task_growth_interactive_plots_lebanon_and_yemen(
     plot_growth_interactive_plots(
         data, three_p_indexes_growth, output_dir, list_name="lebanon_and_yemen"
     )
-
+'''
 
 products_growth_interactive_plots = []
 for list_name in inputs_growth_plots:
