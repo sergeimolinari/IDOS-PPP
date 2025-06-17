@@ -12,9 +12,13 @@
   - Wars, civil wars
   - Terrorism
   - Changes in the share of tax revues as a share of GDP
-  - Protests Please let us all think about:
+  - Protests
+  
+  Please let us all think about:
   - Possible additional ones
-  - Indicators to measure these variables In addition, Sergei will:
+  - Indicators to measure these variables
+  
+  In addition, Sergei will:
   - Try to add the data for 2022 for all three Ps for as many countries as possible.
   - Add at least 1-2Ps also for countries like Iraq where the data of 1-2 Ps are
     missing.
