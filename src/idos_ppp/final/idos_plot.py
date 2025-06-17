@@ -156,7 +156,7 @@ def plot_comparative_bar_chart(data, year, indices):
     sns.barplot(data=melted_data, x="Index", y="Value", hue="country_name")
 
     plt.title(
-        f"Comparison of Key Indices between {countries[0]} and {countries[1]} for {year}"
+        f"Comparison of Key Indices between countries for {year}" # {countries[0]} and {countries[1]}
     )
     plt.ylabel("Value")
     plt.legend(title="Country")

@@ -214,7 +214,7 @@ country_lists = {
     "european_union_countries": european_union_countries,
     "middle_east_north_africa_countries": middle_east_north_africa_countries,
     # add countries to leave out to study these countries
-    # "countries_to_leave_out": countries_to_leave_out
+    "countries_to_leave_out": countries_to_leave_out
     } 
 
 

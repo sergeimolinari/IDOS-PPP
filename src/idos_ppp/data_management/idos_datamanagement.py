@@ -30,9 +30,9 @@ def clean_year_data(raw, country_codes):
 
     filtered_dta = _filter_valid_country_codes(updated_dta, country_codes)
 
-    reduced_dta = _remove_countries_to_leave_out(filtered_dta)
+    # reduced_dta = _remove_countries_to_leave_out(filtered_dta)
 
-    renamed_dta = _rename_columns_based_on_id(reduced_dta)
+    renamed_dta = _rename_columns_based_on_id(filtered_dta)
 
     selected_columns_dta = _select_relevant_columns(renamed_dta)
 
