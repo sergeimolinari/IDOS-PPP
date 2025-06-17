@@ -13,12 +13,14 @@
   - Terrorism
   - Changes in the share of tax revues as a share of GDP
   - Protests
-  
+
   Please let us all think about:
+
   - Possible additional ones
   - Indicators to measure these variables
-  
+
   In addition, Sergei will:
+
   - Try to add the data for 2022 for all three Ps for as many countries as possible.
   - Add at least 1-2Ps also for countries like Iraq where the data of 1-2 Ps are
     missing.
@@ -26,94 +28,89 @@
   - Double check the excel sheet if the issue about “median/average” has been settled
     now everywhere in the excel file.
 
-- Amirah -> I am not sure we had planned to regress the index on growth or the change in
-  the index on growth? Anyways, I thought it over again and just a quick note regarding
-  the regression setup:
+- Summary of Amirah's Guidelines -> Amirah has provided a comprehensive set of
+  guidelines and considerations for conducting regression analysis on your dataset,
+  particularly focusing on the relationship between government service provision indices
+  and economic growth. Here's a breakdown of her points:
 
-  - In case we regress the index on growth: regressing a level variable - such our index
-    measuring government service provision - on a change variable like annual GDP growth
-    can pose both conceptual and statistical challenges. The interpretation is not
-    always straightforward, as this regression assumes that short-term economic growth
-    leads directly to shifts in a stock or a structural outcome, which is unlikely to be
-    the case unless the index is highly responsive to economic cycles. Also, there’s a
-    potential mismatch in variable properties (levels vs. differences), which can lead
-    to spurious results, especially if the index trends over time while GDP growth
-    fluctuates. So it is more appropriate to regress changes in the index on GDP growth
-    (likely I just missed that in our meeting), or using lagged GDP growth as a
-    predictor of the index level to better capture delayed effects. I also realized that
-    if we use year fixed effects shocks in specific years will be accounted for (such as
-    the financial crisis and the COVID). It wasn’t clear that we plan to use fixed
-    effects (although quite challenging with such a small sample).
-  - In case we regress the ‘change’ in the index on growth: We will be faced with the v
-    limited variation in the dependent variable (ΔIndex) which we have already seen in
-    our results. This will reduce the statistical power of our regression. On the other
-    hand, we have high volatility in our independent variable (GDP growth): This large
-    fluctuation will likely introduce noise. Unless there's a strong, consistent
-    relationship, this volatility could weaken coefficient significance and increase
-    standard errors. Generally even if we do the change on change, government
-    deliverables evolve gradually while GDP growth is cyclical and volatile. This
-    mismatch could result in weak or insignificant correlations, especially over short
-    time spans. Though of course the changes across sample countries despite the
-    observations over time may produce reasonable results. So we can and should run the
-    regressions anyway but we should be prepared for unwanted results. In such a case it
-    maybe better to invest in interpreting the fantastic visual results produced
-    focusing on the observed interesting trends and outliers.
+  1. Conceptual and Statistical Challenges
 
-- Amirah -> Please find below:
+  - Regression Setup:
+    1. Index on Growth: Regressing a level variable (like a government service provision
+       index) on a change variable (like annual GDP growth) can be problematic. It
+       assumes that short-term economic fluctuations directly impact structural
+       outcomes, which may not be the case.
+    1. Change in Index on Growth: Regressing changes in the index on GDP growth might
+       face issues due to limited variation in the dependent variable and high
+       volatility in GDP growth, potentially leading to weak or insignificant results.
+  - Alternative Approaches:
+    1. Lagged GDP Growth: Using lagged GDP growth as a predictor can better capture
+       delayed effects on the index level.
+    1. Fixed Effects: Incorporating year fixed effects can account for shocks in
+       specific years (e.g., financial crisis, COVID-19). Even though this approach is
+       quite challenging with such a small sample.
 
-  1. a list of potential control variables and reasons why they may be relevant
-  1. a suggestion for a good regression strategy. Markus will you please check and
-     re-confirm with Sergei.
+  2. Control Variables -> Amirah suggests several control variables that could be
+     relevant for your regression analysis:
 
-  - additional regressors/control variables - they should mainly “not” be correlated
-    with our main regressor GDP growth:
-    - Official Development Assistance (ODA): in low and middle -income countries, a
-      large share of service delivery maybe funded externally.
-    - log(population) and the urbanization level: population scale and density or the
-      scale and geography of the population could affect service delivery (e.g. per
-      capita coverage, logistical costs). level of urbanization measured as= (Urban
-      population/ Total population) x 100
-    - Institutional quality (Rule of Law, Government Effectiveness, Control of
-      Corruption, Democracy Index/regime type: from the World Governance Indicators):
-      strong institutions help translate GDP into actual service delivery. Countries
-      with same income levels may differ a lot in performance due to governance quality
-      and responsiveness.
-    - Demographics such as % of population under 15, that is the dependency ratio: young
-      populations require more education and health services, influencing both needs and
-      policy priorities (the assumption would be the higher the rate the more we should
-      observe gov provision.
-    - Fiscal capacity such as government spending as % of GDP, tax revenue as % of GDP:
-      GDP enables capacity, but actual government spending channels that capacity into
-      services (I have doubts about this one but worth it to look into it, I see also
-      the counter logic not to use it).
-    - Human capital indicators such as the literacy rate (or illiteracy for that matter)
-      and average years of schooling: These are both outcome variables but are also
-      “facilitators” of service provision, especially in health and education sectors
-      (the higher the easier is distribution so to speak).
-    - Conflict such as the presence of conflict, fragility index, or dummy for fragile
-      states: conflict-affected countries likely to experience service delivery
-      breakdowns regardless of GDP. This variable is included in our protection index
-      but not in the provision index so can be safely used as a regressor for the
-      Provision P.
-  - regression model: Despite the limited number of years we should make use of the
-    panel nature of our dataset as Markus has stressed several times. We should:
-    - Use panel data with country fixed effects to control for unobserved time-invariant
-      characteristics.
-    - Add year fixed effects to control for time shocks.
-    - Consider using clustered standard errors at the country level to account for
-      serial correlation.
-    - Since GDP growth is quite volatile we could lag GDP growth, so for example use
-      average growth over the past 2–3 years to reflect the delayed impact on government
-      capabilities.
-    - We should probably introduce the additional controls one after the other to see
-      how the regression changes with additions and to observe the robustness in our
-      variables.
+  - Official Development Assistance (ODA): External funding may significantly impact
+    service delivery in low and middle-income countries.
+  - Population and Urbanization: Population scale and urbanization level can affect
+    service delivery logistics and coverage. (use log(pop) -> population scale and
+    density or the scale and geography of the population could affect service delivery
+    (e.g. per capita coverage, logistical costs). level of urbanization measured as=
+    (Urban population/ Total population) x 100).
+  - Institutional Quality: Indicators like Rule of Law, Government Effectiveness, and
+    Control of Corruption from the World Governance Indicators can influence how
+    effectively GDP translates into service delivery.
+  - Demographics: The percentage of the population under 15 (dependency ratio) can
+    affect the demand for education and health services.
+  - Fiscal Capacity: Government spending and tax revenue as percentages of GDP can
+    indicate the capacity to channel resources into services.
+  - Human Capital: Literacy rates and average years of schooling can facilitate service
+    provision, particularly in health and education sectors.
+  - Conflict: Presence of conflict or fragility can disrupt service delivery, making it
+    a relevant control variable, especially for the Provision index.
 
-I just thought mostly about controls for the Provision P we should also think about
-suitable controls for the other Ps. I will do so after my return from my short holiday.
-So Markus (and Tina) please check and let us (particularly Sergei) know what you think
-and whether you would like to further discuss any aspect. Sergei will you be able to get
-the variables and implement the regression strategy if we agree on it?
+  3. Regression Strategy
+
+  - Panel Data: Utilize the panel nature of your dataset with country fixed effects to
+    control for unobserved time-invariant characteristics and year fixed effects to
+    account for time shocks.
+  - Clustered Standard Errors: Use clustered standard errors at the country level to
+    address serial correlation.
+  - Lagged Variables: Consider using lagged GDP growth or average growth over past years
+    to reflect delayed impacts.
+  - Incremental Introduction of Controls: Introduce additional control variables one by
+    one to observe their impact on the regression results and ensure robustness.
+
+  4. Insights and Next Steps
+
+  - Data Collection: Gather the suggested control variables from reliable sources.
+    Ensure that the data is consistent and covers the same time period and countries as
+    your main dataset.
+  - Regression Implementation:
+    1. Software and Tools: Use statistical software like R, Stata, or Python (with
+       libraries like pandas, statsmodels, and linearmodels for panel data analysis) to
+       implement the regression models.
+    1. Model Specification: Start with a basic model and gradually introduce control
+       variables to assess their impact on the regression coefficients and overall model
+       fit.
+    1. Diagnostics: Conduct diagnostic tests to check for multicollinearity,
+       heteroskedasticity, and serial correlation. Address any issues that arise.
+  - Interpretation and Reporting:
+    1. Focus on Robustness: Emphasize the robustness of your findings and be prepared to
+       interpret results even if they are not statistically significant.
+    1. Visualization: Continue to leverage the visual results you have produced.
+       Highlight interesting trends and outliers in your analysis, as these can provide
+       valuable insights even in the absence of strong regression results.
+  - Communication with Amirah:
+    1. Feasibility: Confirm with Amirah that you have access to the necessary data and
+       tools to implement the regression strategy. Discuss any potential challenges or
+       limitations you foresee.
+    1. Collaboration: Work closely with Markus and Amirah to ensure that the regression
+       strategy aligns with the overall research objectives and addresses any concerns
+       they may have.
 
 # NEXT STEPS
 
