@@ -101,9 +101,11 @@
   - Interpretation and Reporting:
     1. Focus on Robustness: Emphasize the robustness of your findings and be prepared to
        interpret results even if they are not statistically significant.
-    1. Visualization: Continue to leverage the visual results you have produced.
-       Highlight interesting trends and outliers in your analysis, as these can provide
-       valuable insights even in the absence of strong regression results.
+    1. Visualization (while estimating causal effects you always summarize your main
+       results in smart and effective pictures): Continue to leverage the visual results
+       you have produced. Highlight interesting trends and outliers in your analysis, as
+       these can provide valuable insights even in the absence of strong regression
+       results.
   - Communication with Amirah:
     1. Feasibility: Confirm with Amirah that you have access to the necessary data and
        tools to implement the regression strategy. Discuss any potential challenges or
