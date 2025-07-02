@@ -53,4 +53,4 @@ work_in_here*
 src/idos_ppp/data_management/try*
 *.ipynb
 src/idos_ppp/try*
-src/idos_ppp/data/original_data
+src/idos_ppp/data/original_data/DATA/
