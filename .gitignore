@@ -50,7 +50,9 @@ docs_template/scripts/latex/*.png
 
 # work_in_here
 work_in_here*
-src/idos_ppp/data_management/try*
 *.ipynb
 src/idos_ppp/try*
+
+# original data
 src/idos_ppp/data/original_data/DATA/
+src/idos_ppp/data/original_data/
