@@ -206,6 +206,16 @@ coups d’état, etc.? No, unfortunately we don’t have. I’ll follow up. We a
 on different indicators (just successful revolutions and coups d’états, or also protests)
 and if I remember right, @Sergei, you wanted to look into the GDELT and Mass mobilization
 data Semuhi had suggested).
+  1) GDELT: https://blog.gdeltproject.org/mapping-global-protest-trends-1979-2019-through-one-billion-news-articles/
+  A open source database of news articles and search using Google's BigQuery platform
+  2) Mass mobilization data: https://dataverse.harvard.edu/dataverse/MMdata
+  The Mass Mobilization (MM) data are an effort to understand citizen movements against
+  governments, what citizens want when they demonstrate against governments, and how
+  governments respond to citizens. The project codes protests against governments - the
+  data cover 162 countries between 1990 and March 2020. For each protest event, the
+  project records protester demands, government responses, protest location, and protester
+  identities.
+ 
 
 - When where the shocks for each country / region?
 
