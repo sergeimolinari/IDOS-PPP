@@ -4,18 +4,7 @@
 
 # PRE-MEETING 10/7
 
-Dear Amirah, thank you very much for your great suggestions! I really like them very
-much.
-
-@Sergei, please include at least some of them into your dataset , see below between the
-lines!
-
-@ Tina: do we have by now indices measuring revolutions, coups d’état, etc.? No,
-unfortunately we don’t have. I haven’t pushed this further as I wasn’t sure we reached a
-consensus that we really go for it. Seems I misunderstood, sorry, I’ll follow up. We
-also discussed on different indicators (just successful revolutions and coups d’états,
-or also protests) and if I remember right, @Sergei, you wanted to look into the GDELT
-and Mass mobilization data Semuhi had suggested?
+Suggestions from Amirah with Markus' and Tina's comments:
 
 @ all how about measuring competing positions in government budget such as military,
 police etc.? Good idea. Police expenditure might also give a hint about repression of
@@ -210,9 +199,13 @@ dataset as Markus has stressed several times. We should:
 # NEXT STEPS
 
 - Brainstorming for independent variables -> difference between years (RDD and DiD) ->
-  observations and maybe motivation
+  observations and maybe motivation. INCLUDE at least some of them into your dataset.
 
-- Protest data from Tina ?
+- Protest data from Tina ? (@ Tina: do we have by now indices measuring revolutions, 
+coups d’état, etc.? No, unfortunately we don’t have. I’ll follow up. We also discussed
+on different indicators (just successful revolutions and coups d’états, or also protests)
+and if I remember right, @Sergei, you wanted to look into the GDELT and Mass mobilization
+data Semuhi had suggested).
 
 - When where the shocks for each country / region?
 
