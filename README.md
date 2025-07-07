@@ -74,25 +74,6 @@ social norms, lack of awareness…) (Tina)
 
 Correlates too much with our protection index index (Markus) I agree (Tina)
 
-B. regression model
-
-Despite the limited number of years we should make use of the panel nature of our
-dataset as Markus has stressed several times. We should:
-
-1. Use panel data with country fixed effects to control for unobserved time-invariant
-   characteristics. Do with and without. Perhaps we want to know about country specifics
-   or region specifics (Markus)
-1. Add year fixed effects to control for time shocks. Do with and without. Perhaps we
-   want to know about effects of global shocks at specific times (Markus)
-1. Consider using clustered standard errors at the country level to account for serial
-   correlation.
-1. Since GDP growth is quite volatile we could lag GDP growth, so for example use
-   average growth over the past 2–3 years to reflect the delayed impact on government
-   capabilities. Very good idea. Yes: please do! (Markus)
-1. We should probably introduce the additional controls one after the other to see how
-   the regression changes with additions and to observe the robustness in our variables.
-   Agree! Agree to all of them (Tina)
-
 # MEETING 28/5
 
 - Markus -> We have identified the following possible independent variables as possible
@@ -133,8 +114,10 @@ dataset as Markus has stressed several times. We should:
   1. Regression Strategy
 
   - Panel Data: Utilize the panel nature of your dataset with country fixed effects to
-    control for unobserved time-invariant characteristics and year fixed effects to
-    account for time shocks.
+    control for unobserved time-invariant characteristics (Markus' suggestion: do it with
+    and without -> country or region specifics) and year fixed effects to account for
+    time shocks. (Markus' suggestion: do it with and without -> effects of global shocks
+    at specific times).
   - Clustered Standard Errors: Use clustered standard errors at the country level to
     address serial correlation.
   - Lagged Variables: Consider using lagged GDP growth or average growth over past years
