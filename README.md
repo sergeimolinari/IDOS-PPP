@@ -99,6 +99,21 @@ dataset as Markus has stressed several times. We should:
   explaining ones:
 
   - Growth (or change in growth)
+    Problem with growth (Amirah): Conceptual and Statistical Challenges
+      - Regression Setup:
+        1. Index on Growth: Regressing a level variable (like a government service provision
+       index) on a change variable (like annual GDP growth) can be problematic. It
+       assumes that short-term economic fluctuations directly impact structural
+       outcomes, which may not be the case.
+        1. Change in Index on Growth: Regressing changes in the index on GDP growth might
+       face issues due to limited variation in the dependent variable and high
+       volatility in GDP growth, potentially leading to weak or insignificant results.
+      - Alternative Approaches:
+        1. Lagged GDP Growth: Using lagged GDP growth as a predictor can better capture
+       delayed effects on the index level.
+        1. Fixed Effects: Incorporating year fixed effects can account for shocks in
+       specific years (e.g., financial crisis, COVID-19). Even though this approach is
+       quite challenging with such a small sample.
   - Revolutions, coups d’état, seizures of power,
   - Wars, civil wars
   - Terrorism
@@ -115,24 +130,7 @@ dataset as Markus has stressed several times. We should:
   particularly focusing on the relationship between government service provision indices
   and economic growth. Here's a breakdown of her points:
 
-  1. Conceptual and Statistical Challenges
-
-  - Regression Setup:
-    1. Index on Growth: Regressing a level variable (like a government service provision
-       index) on a change variable (like annual GDP growth) can be problematic. It
-       assumes that short-term economic fluctuations directly impact structural
-       outcomes, which may not be the case.
-    1. Change in Index on Growth: Regressing changes in the index on GDP growth might
-       face issues due to limited variation in the dependent variable and high
-       volatility in GDP growth, potentially leading to weak or insignificant results.
-  - Alternative Approaches:
-    1. Lagged GDP Growth: Using lagged GDP growth as a predictor can better capture
-       delayed effects on the index level.
-    1. Fixed Effects: Incorporating year fixed effects can account for shocks in
-       specific years (e.g., financial crisis, COVID-19). Even though this approach is
-       quite challenging with such a small sample.
-
-  2. Control Variables -> Amirah suggests several control variables that could be
+  1. Control Variables -> Amirah suggests several control variables that could be
      relevant for your regression analysis:
 
   - Official Development Assistance (ODA): External funding may significantly impact
@@ -154,7 +152,7 @@ dataset as Markus has stressed several times. We should:
   - Conflict: Presence of conflict or fragility can disrupt service delivery, making it
     a relevant control variable, especially for the Provision index.
 
-  3. Regression Strategy
+  2. Regression Strategy
 
   - Panel Data: Utilize the panel nature of your dataset with country fixed effects to
     control for unobserved time-invariant characteristics and year fixed effects to
