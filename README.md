@@ -130,29 +130,7 @@ dataset as Markus has stressed several times. We should:
   particularly focusing on the relationship between government service provision indices
   and economic growth. Here's a breakdown of her points:
 
-  1. Control Variables -> Amirah suggests several control variables that could be
-     relevant for your regression analysis:
-
-  - Official Development Assistance (ODA): External funding may significantly impact
-    service delivery in low and middle-income countries.
-  - Population and Urbanization: Population scale and urbanization level can affect
-    service delivery logistics and coverage. (use log(pop) -> population scale and
-    density or the scale and geography of the population could affect service delivery
-    (e.g. per capita coverage, logistical costs). level of urbanization measured as=
-    (Urban population/ Total population) x 100).
-  - Institutional Quality: Indicators like Rule of Law, Government Effectiveness, and
-    Control of Corruption from the World Governance Indicators can influence how
-    effectively GDP translates into service delivery.
-  - Demographics: The percentage of the population under 15 (dependency ratio) can
-    affect the demand for education and health services.
-  - Fiscal Capacity: Government spending and tax revenue as percentages of GDP can
-    indicate the capacity to channel resources into services.
-  - Human Capital: Literacy rates and average years of schooling can facilitate service
-    provision, particularly in health and education sectors.
-  - Conflict: Presence of conflict or fragility can disrupt service delivery, making it
-    a relevant control variable, especially for the Provision index.
-
-  2. Regression Strategy
+  1. Regression Strategy
 
   - Panel Data: Utilize the panel nature of your dataset with country fixed effects to
     control for unobserved time-invariant characteristics and year fixed effects to
@@ -164,7 +142,7 @@ dataset as Markus has stressed several times. We should:
   - Incremental Introduction of Controls: Introduce additional control variables one by
     one to observe their impact on the regression results and ensure robustness.
 
-  4. Insights and Next Steps
+  2. Insights and Next Steps
 
   - Data Collection: Gather the suggested control variables from reliable sources.
     Ensure that the data is consistent and covers the same time period and countries as
