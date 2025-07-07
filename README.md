@@ -122,7 +122,7 @@ dataset as Markus has stressed several times. We should:
 
   Please let us all think about:
 
-  - Possible additional ones
+  - Possible additional ones (Check Amirah's list above)
   - Indicators to measure these variables
 
 - Summary of Amirah's Guidelines -> Amirah has provided a comprehensive set of
@@ -164,13 +164,6 @@ dataset as Markus has stressed several times. We should:
        you have produced. Highlight interesting trends and outliers in your analysis, as
        these can provide valuable insights even in the absence of strong regression
        results.
-  - Communication with Amirah:
-    1. Feasibility: Confirm with Amirah that you have access to the necessary data and
-       tools to implement the regression strategy. Discuss any potential challenges or
-       limitations you foresee.
-    1. Collaboration: Work closely with Markus and Amirah to ensure that the regression
-       strategy aligns with the overall research objectives and addresses any concerns
-       they may have.
 
 # NEXT STEPS
 
