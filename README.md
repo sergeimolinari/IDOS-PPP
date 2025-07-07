@@ -99,7 +99,7 @@ dataset as Markus has stressed several times. We should:
   explaining ones:
 
   - Growth (or change in growth)
-    Problem with growth (Amirah): Conceptual and Statistical Challenges
+    - Problem with growth (Amirah): Conceptual and Statistical Challenges
       - Regression Setup:
         1. Index on Growth: Regressing a level variable (like a government service provision
        index) on a change variable (like annual GDP growth) can be problematic. It
