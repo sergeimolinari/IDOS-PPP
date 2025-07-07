@@ -113,22 +113,13 @@ dataset as Markus has stressed several times. We should:
   - Revolutions, coups d’état, seizures of power,
   - Wars, civil wars
   - Terrorism
-  - Changes in the share of tax revues as a share of GDP
-  - Protests
+  - Changes in the share of tax revenues as a share of GDP
+  - Protests 
 
   Please let us all think about:
 
   - Possible additional ones
   - Indicators to measure these variables
-
-  In addition, Sergei will:
-
-  - Try to add the data for 2022 for all three Ps for as many countries as possible.
-  - Add at least 1-2Ps also for countries like Iraq where the data of 1-2 Ps are
-    missing.
-  - Add countries like South Sudan for the years for which we have data.
-  - Double check the excel sheet if the issue about “median/average” has been settled
-    now everywhere in the excel file.
 
 - Summary of Amirah's Guidelines -> Amirah has provided a comprehensive set of
   guidelines and considerations for conducting regression analysis on your dataset,
@@ -227,10 +218,7 @@ dataset as Markus has stressed several times. We should:
 
 - Changes for provision: was it one sub-index or a shift between different sub-indexes?
 
-- Find data for 2022
-
-- Add countries: analysis Sudan and South Sudan, and countries that were previously
-  removed
+- Try to add the data for 2022 for all three Ps for as many countries as possible.
 
 - Remember:
 
@@ -264,7 +252,13 @@ dataset as Markus has stressed several times. We should:
   period 2007-19), Sudan (left out because data missing for provision index), Uzbekistan
   (left out because data missing for provision index).
 - Created sub-datasets for Conflict/Post-Conflict countries, GCC and Repressive
-  Countries, and EU Countries.
+  Countries, MENA Region, and EU Countries.
+- Added back the eight countries that were left out due to missing data and created
+  a comparison between the two datasets (with and without these countries).
+- Plots and correlation analysis for the three indices (Protection, Provision,
+  Participation) and some of their components.
+- Checked 2007's protection index (Double checked the excel sheet if the issue about 
+  “median/average” has been settled now everywhere in the excel file).
 
 # Description
 
