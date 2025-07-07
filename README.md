@@ -144,13 +144,7 @@ dataset as Markus has stressed several times. We should:
 
   2. Insights and Next Steps
 
-  - Data Collection: Gather the suggested control variables from reliable sources.
-    Ensure that the data is consistent and covers the same time period and countries as
-    your main dataset.
   - Regression Implementation:
-    1. Software and Tools: Use statistical software like R, Stata, or Python (with
-       libraries like pandas, statsmodels, and linearmodels for panel data analysis) to
-       implement the regression models.
     1. Model Specification: Start with a basic model and gradually introduce control
        variables to assess their impact on the regression coefficients and overall model
        fit.
