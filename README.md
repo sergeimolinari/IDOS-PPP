@@ -239,9 +239,6 @@ dataset as Markus has stressed several times. We should:
   - Added value: Do the indices add information to other available indicators and
     indices? -> check which countries are better for each 3P index.
 
-- Next paper -> development of countries over time, with an obvious focus on MENA
-  countries (trends).
-
 # Done
 
 - Countries to leave out: Belarus (left out because data missing for provision index),
@@ -363,12 +360,8 @@ dataset as Markus has stressed several times. We should:
 
 # Objectives
 
-Building on this work, and recognizing the need for further data cleaning and analysis,
-this project focuses mostly on data cleaning and management (data management) in order
-to produce meaningful insights in the future for the research team. These will include
-identifying trends, correlations, and visualizations (e.g., graphs and plots), with
-potential emphasis on subsets of countries within the dataset (analysis and final
-parts).
+Next paper -> development of countries over time, with an obvious focus on MENA countries
+(trends).
 
 # How to run the project
 
