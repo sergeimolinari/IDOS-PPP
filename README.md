@@ -2,6 +2,108 @@
 
 # *Exploring the 3P Index: Data-Driven Insights for the MENA Team*
 
+# PRE-MEETING 10/7
+
+Dear Amirah, thank you very much for your great suggestions! I really like them very
+much.
+
+@Sergei, please include at least some of them into your dataset , see below between the
+lines!
+
+@ Tina: do we have by now indices measuring revolutions, coups d’état, etc.? No,
+unfortunately we don’t have. I haven’t pushed this further as I wasn’t sure we reached a
+consensus that we really go for it. Seems I misunderstood, sorry, I’ll follow up. We
+also discussed on different indicators (just successful revolutions and coups d’états,
+or also protests) and if I remember right, @Sergei, you wanted to look into the GDELT
+and Mass mobilization data Semuhi had suggested?
+
+@ all how about measuring competing positions in government budget such as military,
+police etc.? Good idea. Police expenditure might also give a hint about repression of
+protests, see above. We would then need to factor in whether there is or has been in the
+recent past an open intra-state conflict or civil war.
+
+A. additional regressors/control variables - they should mainly “not” be correlated with
+our main regressor GDP growth:
+
+1. Official Development Assistance (ODA): in low and middle -income countries, a large
+   share of service delivery maybe funded externally.
+
+Agree! (Markus) yes (Tina)
+
+2. log(population) and the urbanization level: population scale and density or the scale
+   and geography of the population could affect service delivery (e.g. per capita
+   coverage, logistical costs). level of urbanization measured as= (Urban population/
+   Total population) x 100 Agree with both! (Markus) yes, very good points (Tina)
+
+1. Institutional quality (Rule of Law, Government Effectiveness, Control of Corruption,
+   Democracy Index/regime type: from the World Governance Indicators): strong
+   institutions help translate GDP into actual service delivery. Countries with same
+   income levels may differ a lot in performance due to governance quality and
+   responsiveness.
+
+Agree with Rule of Law, Government Effectiveness and Control of Corruption! In turn,
+Democracy Index is already included in our Participation Index! (Markus) Plus we had the
+rule of law index under provision, though we didn’t get enough data for a lot of
+countries (Tina)
+
+4. Demographics such as % of population under 15, that is the dependency ratio: young
+   populations require more education and health services, influencing both needs and
+   policy priorities (the assumption would be the higher the rate the more we should
+   observe gov provision.
+
+I would suggest to take total age dependency ratio instead as we did in our first
+article! (Markus) agree (Tina)
+
+5. Fiscal capacity such as government spending as % of GDP, tax revenue as % of GDP: GDP
+   enables capacity, but actual government spending channels that capacity into services
+   (I have doubts about this one but worth it to look into it, I see also the counter
+   logic not to use it).
+
+Correlates too much with our provision index. Government spending is exactly the output
+that we measure! (Markus) I don’t think that this is exactly what we did before. Fiscal
+capacity as suggested by Amirah would be the whole cake, and the different provision
+subindices we measured would be the slices of the cake. For me, it is the same logic as
+with ODA figures, see above. So far we used high-income vs low-income as a proxy for
+that (see our first paper) but does this necessarily reflect the fiscal capacity of the
+government? (Tina)
+
+6. Human capital indicators such as the literacy rate (or illiteracy for that matter)
+   and average years of schooling: These are both outcome variables but are also
+   “facilitators” of service provision, especially in health and education sectors (the
+   higher the easier is distribution so to speak).
+
+Correlates too much with our provision index! (Markus) I’m not sure this brings a lot of
+new insights. As Markus wrote, it is correlated with our provision index, and the part
+that is not correlated to it is very differentiated and difficult to argue (household
+decisions why not to send their kids to school, due to poverty and need of income,
+social norms, lack of awareness…) (Tina)
+
+7. Conflict such as the presence of conflict, fragility index, or dummy for fragile
+   states: conflict-affected countries likely to experience service delivery breakdowns
+   regardless of GDP. This variable is included in our protection index but not in the
+   provision index so can be safely used as a regressor for the Provision P.
+
+Correlates too much with our protection index index (Markus) I agree (Tina)
+
+B. regression model
+
+Despite the limited number of years we should make use of the panel nature of our
+dataset as Markus has stressed several times. We should:
+
+1. Use panel data with country fixed effects to control for unobserved time-invariant
+   characteristics. Do with and without. Perhaps we want to know about country specifics
+   or region specifics (Markus)
+1. Add year fixed effects to control for time shocks. Do with and without. Perhaps we
+   want to know about effects of global shocks at specific times (Markus)
+1. Consider using clustered standard errors at the country level to account for serial
+   correlation.
+1. Since GDP growth is quite volatile we could lag GDP growth, so for example use
+   average growth over the past 2–3 years to reflect the delayed impact on government
+   capabilities. Very good idea. Yes: please do! (Markus)
+1. We should probably introduce the additional controls one after the other to see how
+   the regression changes with additions and to observe the robustness in our variables.
+   Agree! Agree to all of them (Tina)
+
 # MEETING 28/5
 
 - Markus -> We have identified the following possible independent variables as possible
