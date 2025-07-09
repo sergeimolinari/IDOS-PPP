@@ -162,7 +162,6 @@ data Semuhi had suggested).
   project records protester demands, government responses, protest location, and protester
   identities.
  
-
 - When where the shocks for each country / region?
 
 - Changes for provision: was it one sub-index or a shift between different sub-indexes?
@@ -170,7 +169,6 @@ data Semuhi had suggested).
 - Try to add the data for 2022 for all three Ps for as many countries as possible.
 
 - Remember:
-
   - Variance: Do the three indices display existing disparities between different
     countries? -> check interval / range.
   - Plausibility: Are the results in line with possible explanations? -> values as in
@@ -190,13 +188,14 @@ data Semuhi had suggested).
 
 # Done
 
-- Countries to leave out: Belarus (left out because data missing for provision index),
-  Eswatini (left out because data missing for protection and provision index), Gabon
-  (left out because data missing for provision index), Iraq (left out because data
-  missing for provision index), Papua New Guinea (left out because data missing for
-  provision index), South Sudan (left out because country has come into being during the
-  period 2007-19), Sudan (left out because data missing for provision index), Uzbekistan
-  (left out because data missing for provision index).
+- Countries that have several observations missing and were previously left out: Belarus
+  (left out because data missing for provision index), Eswatini (left out because data 
+  missing for protection and provision index), Gabon (left out because data missing for 
+  provision index), Iraq (left out because data missing for provision index), Papua New
+  Guinea (left out because data missing for provision index), South Sudan (left out
+  because country has come into being during the period 2007-19), Sudan (left out because
+  data missing for provision index), Uzbekistan (left out because data missing for
+  provision index).
 - Created sub-datasets for Conflict/Post-Conflict countries, GCC and Repressive
   Countries, MENA Region, and EU Countries.
 - Added back the eight countries that were left out due to missing data and created
