@@ -2,7 +2,65 @@
 
 # *Exploring the 3P Index: Data-Driven Insights for the MENA Team*
 
-# PRE-MEETING 10/7
+# PRE-MEETING 6/8
+
+### Data Verification and Integration
+
+- **Review Calculations**: Verify Ravi's calculations from section 3-2.
+- **Construct New Datasets**: Develop updated datasets in Excel and subsequently in
+  Python for further analysis.
+
+### Communication and Collaboration
+
+- **WEF Communication**: Send an email to the World Economic Forum to gather necessary
+  information or data.
+- **Data Sources Information**: Obtain detailed information from Markus regarding data
+  sources and create a dedicated file for WEF data.
+
+## DATA INTEGRATION FOR FUTURE ANALYSIS AND REGRESSIONS
+
+### Fiscal and Economic Data Integration
+
+- **Fiscal Capacity Data**: Integrate data for fiscal capacity indicators, including:
+  - Government spending as a percentage of GDP.
+  - Total government revenue (consider sources like IMF).
+  - Tax revenue as a percentage of GDP.
+- **Official Development Assistance (ODA)**: Integrate data on ODA receipts (utilize
+  OECD sources?), focusing on actual receipts (the actual amounts of aid that have been
+  received and recorded by the recipient countries or organizations) rather than pledges
+  (commitments or promises made by donor countries or organizations to provide a certain
+  amount of aid in the future).
+- **Consumer Price Index**: Incorporate consumer price index data to account for
+  inflation (likely available from IMF).
+- **Lagged GDP Growth**: Integrate lagged GDP growth data, specifically using the
+  average of the three previous years.
+- **Population Metrics**: Integrate data for:
+  - Logarithm of population.
+  - Urbanization level.
+  - Population density.
+- **Age Dependency Rate**: Integrate the age dependency rate, defined as the share of
+  people below 15 and above 65 relative to the total population.
+
+### Sector-Specific Data
+
+- **Resource Receipts**: Consider integrating receipts from mineral and energy sales
+  (potential source: IMF).
+- **Military Spending**: Integrate military spending data (consider using Stockholm
+  International Peace Research Institute data?).
+
+### Social and Environmental Data
+
+- **Conflict Data**: No, as it is already covered under the protection index.
+- **Protest Datasets**: Review Tina’s datasets related to protests.
+- **Migration and Neighboring Influence**: Explore data on:
+  - Share of immigrants and the influence of proximity to conflict countries.
+  - Cooperation between leaders.
+  - Dummy variables for neighboring countries in conflict (Tina will provide further
+    insights).
+  - Out-migration patterns.
+- **Natural Disaster Costs**: Integrate data on the cost of natural disasters.
+
+# BRAINSTORMING INDEPENDENT VARIABLES (PRE-MEETING AND MEETING 10/7)
 
 Suggestions from Amirah with Markus' and Tina's comments:
 
@@ -74,7 +132,7 @@ social norms, lack of awareness…) (Tina)
 
 Correlates too much with our protection index index (Markus) I agree (Tina)
 
-# MEETING 28/5
+# BRAINSTORMING FROM MEETING 28/5
 
 - Markus -> We have identified the following possible independent variables as possible
   explaining ones:
@@ -82,24 +140,25 @@ Correlates too much with our protection index index (Markus) I agree (Tina)
   - Growth (or change in growth)
     - Problem with growth (Amirah): Conceptual and Statistical Challenges
       - Regression Setup:
-        1. Index on Growth: Regressing a level variable (like a government service provision
-       index) on a change variable (like annual GDP growth) can be problematic. It
-       assumes that short-term economic fluctuations directly impact structural
-       outcomes, which may not be the case.
-        1. Change in Index on Growth: Regressing changes in the index on GDP growth might
-       face issues due to limited variation in the dependent variable and high
-       volatility in GDP growth, potentially leading to weak or insignificant results.
+        1. Index on Growth: Regressing a level variable (like a government service
+           provision index) on a change variable (like annual GDP growth) can be
+           problematic. It assumes that short-term economic fluctuations directly impact
+           structural outcomes, which may not be the case.
+        1. Change in Index on Growth: Regressing changes in the index on GDP growth
+           might face issues due to limited variation in the dependent variable and high
+           volatility in GDP growth, potentially leading to weak or insignificant
+           results.
       - Alternative Approaches:
         1. Lagged GDP Growth: Using lagged GDP growth as a predictor can better capture
-       delayed effects on the index level.
+           delayed effects on the index level.
         1. Fixed Effects: Incorporating year fixed effects can account for shocks in
-       specific years (e.g., financial crisis, COVID-19). Even though this approach is
-       quite challenging with such a small sample.
+           specific years (e.g., financial crisis, COVID-19). Even though this approach
+           is quite challenging with such a small sample.
   - Revolutions, coups d’état, seizures of power,
   - Wars, civil wars
   - Terrorism
   - Changes in the share of tax revenues as a share of GDP
-  - Protests 
+  - Protests
 
   Please let us all think about:
 
@@ -114,10 +173,10 @@ Correlates too much with our protection index index (Markus) I agree (Tina)
   1. Regression Strategy
 
   - Panel Data: Utilize the panel nature of your dataset with country fixed effects to
-    control for unobserved time-invariant characteristics (Markus' suggestion: do it with
-    and without -> country or region specifics) and year fixed effects to account for
-    time shocks. (Markus' suggestion: do it with and without -> effects of global shocks
-    at specific times).
+    control for unobserved time-invariant characteristics (Markus' suggestion: do it
+    with and without -> country or region specifics) and year fixed effects to account
+    for time shocks. (Markus' suggestion: do it with and without -> effects of global
+    shocks at specific times).
   - Clustered Standard Errors: Use clustered standard errors at the country level to
     address serial correlation.
   - Lagged Variables: Consider using lagged GDP growth or average growth over past years
@@ -147,21 +206,23 @@ Correlates too much with our protection index index (Markus) I agree (Tina)
 - Brainstorming for independent variables -> difference between years (RDD and DiD) ->
   observations and maybe motivation. INCLUDE at least some of them into your dataset.
 
-- Protest data from Tina ? (@ Tina: do we have by now indices measuring revolutions, 
-coups d’état, etc.? No, unfortunately we don’t have. I’ll follow up. We also discussed
-on different indicators (just successful revolutions and coups d’états, or also protests)
-and if I remember right, @Sergei, you wanted to look into the GDELT and Mass mobilization
-data Semuhi had suggested).
-  1) GDELT: https://blog.gdeltproject.org/mapping-global-protest-trends-1979-2019-through-one-billion-news-articles/
-  A open source database of news articles and search using Google's BigQuery platform
-  2) Mass mobilization data: https://dataverse.harvard.edu/dataverse/MMdata
-  The Mass Mobilization (MM) data are an effort to understand citizen movements against
-  governments, what citizens want when they demonstrate against governments, and how
-  governments respond to citizens. The project codes protests against governments - the
-  data cover 162 countries between 1990 and March 2020. For each protest event, the
-  project records protester demands, government responses, protest location, and protester
-  identities.
- 
+- Protest data from Tina ? (@ Tina: do we have by now indices measuring revolutions,
+  coups d’état, etc.? No, unfortunately we don’t have. I’ll follow up. We also discussed
+  on different indicators (just successful revolutions and coups d’états, or also
+  protests) and if I remember right, @Sergei, you wanted to look into the GDELT and Mass
+  mobilization data Semuhi had suggested).
+
+  1. GDELT:
+     https://blog.gdeltproject.org/mapping-global-protest-trends-1979-2019-through-one-billion-news-articles/
+     A open source database of news articles and search using Google's BigQuery platform
+  1. Mass mobilization data: https://dataverse.harvard.edu/dataverse/MMdata The Mass
+     Mobilization (MM) data are an effort to understand citizen movements against
+     governments, what citizens want when they demonstrate against governments, and how
+     governments respond to citizens. The project codes protests against governments -
+     the data cover 162 countries between 1990 and March 2020. For each protest event,
+     the project records protester demands, government responses, protest location, and
+     protester identities.
+
 - When where the shocks for each country / region?
 
 - Changes for provision: was it one sub-index or a shift between different sub-indexes?
@@ -169,6 +230,7 @@ data Semuhi had suggested).
 - Try to add the data for 2022 for all three Ps for as many countries as possible.
 
 - Remember:
+
   - Variance: Do the three indices display existing disparities between different
     countries? -> check interval / range.
   - Plausibility: Are the results in line with possible explanations? -> values as in
@@ -189,20 +251,20 @@ data Semuhi had suggested).
 # Done
 
 - Countries that have several observations missing and were previously left out: Belarus
-  (left out because data missing for provision index), Eswatini (left out because data 
-  missing for protection and provision index), Gabon (left out because data missing for 
+  (left out because data missing for provision index), Eswatini (left out because data
+  missing for protection and provision index), Gabon (left out because data missing for
   provision index), Iraq (left out because data missing for provision index), Papua New
   Guinea (left out because data missing for provision index), South Sudan (left out
-  because country has come into being during the period 2007-19), Sudan (left out because
-  data missing for provision index), Uzbekistan (left out because data missing for
-  provision index).
+  because country has come into being during the period 2007-19), Sudan (left out
+  because data missing for provision index), Uzbekistan (left out because data missing
+  for provision index).
 - Created sub-datasets for Conflict/Post-Conflict countries, GCC and Repressive
   Countries, MENA Region, and EU Countries.
-- Added back the eight countries that were left out due to missing data and created
-  a comparison between the two datasets (with and without these countries).
+- Added back the eight countries that were left out due to missing data and created a
+  comparison between the two datasets (with and without these countries).
 - Plots and correlation analysis for the three indices (Protection, Provision,
   Participation) and some of their components.
-- Checked 2007's protection index (Double checked the excel sheet if the issue about 
+- Checked 2007's protection index (Double checked the excel sheet if the issue about
   “median/average” has been settled now everywhere in the excel file).
 
 # Description
@@ -308,8 +370,8 @@ data Semuhi had suggested).
 
 # Objectives
 
-Next paper -> development of countries over time, with an obvious focus on MENA countries
-(trends).
+Next paper -> development of countries over time, with an obvious focus on MENA
+countries (trends).
 
 # How to run the project
 
