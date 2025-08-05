@@ -4,6 +4,16 @@
 
 # PRE-MEETING 6/8
 
+### Done
+
+- **Review Calculations**: Verify Ravi's calculations from section 3-2.
+- **WEF Communication**: Send an email to the World Economic Forum to gather necessary
+  information or data.
+- **Data Sources Information**: Obtain detailed information from Markus regarding data
+  sources, updata Syrian file and send it to Tina and create a dedicated file for WEF.
+
+## !!
+
 ### Data Verification and Integration
 
 - **Review Calculations**: Verify Ravi's calculations from section 3-2.
