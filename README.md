@@ -2,17 +2,31 @@
 
 # *Exploring the 3P Index: Data-Driven Insights for the MENA Team*
 
-# PRE-MEETING 6/8
+# SEPTEMBER (NEXT STEPS)
 
-### Done
+- Check Ravi’s calculations and steps from 3-2.
+- Adjust WEF file and add new info (Gain info from Markus about data sources).
+- Construct and INTEGRATE new DATASETS: Excel (first in each corresponding folder, then
+  in big dataset) and then Python for REGRESSIONS. Check below for details.
+- Take a look at Tina’s protest datasets. (@ Tina: do we have by now indices measuring
+  revolutions, coups d’état, etc.? No, unfortunately we don’t have. I’ll follow up. We
+  also discussed on different indicators (just successful revolutions and coups d’états,
+  or also protests) and if I remember right, @Sergei, you wanted to look into the GDELT
+  and Mass mobilization data Semuhi had suggested. -> 1. GDELT:
+  https://blog.gdeltproject.org/mapping-global-protest-trends-1979-2019-through-one-billion-news-articles/
+  A open source database of news articles and search using Google's BigQuery platform.
+  2\. Mass mobilization data: https://dataverse.harvard.edu/dataverse/MMdata The Mass
+  Mobilization (MM) data are an effort to understand citizen movements against
+  governments, what citizens want when they demonstrate against governments, and how
+  governments respond to citizens. The project codes protests against governments - the
+  data cover 162 countries between 1990 and March 2020. For each protest event, the
+  project records protester demands, government responses, protest location, and
+  protester identities.)
+- When where the shocks for each country / region?
+- Changes for provision: was it one sub-index or a shift between different sub-indexes?
+- Try to add the data for 2022 for all three Ps for as many countries as possible.
 
-- **Review Calculations**: Verify Ravi's calculations from section 3-2.
-- **WEF Communication**: Send an email to the World Economic Forum to gather necessary
-  information or data.
-- **Data Sources Information**: Obtain detailed information from Markus regarding data
-  sources, updata Syrian file and send it to Tina and create a dedicated file for WEF.
-
-## !!
+# PRE-MEETING AND MEETING 6/8
 
 ### Data Verification and Integration
 
@@ -22,10 +36,10 @@
 
 ### Communication and Collaboration
 
-- **WEF Communication**: Send an email to the World Economic Forum to gather necessary
-  information or data.
+- **WEF Communication**: Check email to the World Economic Forum to gather necessary
+  information or data and evaluate other steps.
 - **Data Sources Information**: Obtain detailed information from Markus regarding data
-  sources and create a dedicated file for WEF data.
+  sources and adjust a dedicated file for WEF data.
 
 ## DATA INTEGRATION FOR FUTURE ANALYSIS AND REGRESSIONS
 
@@ -211,52 +225,24 @@ Correlates too much with our protection index index (Markus) I agree (Tina)
        these can provide valuable insights even in the absence of strong regression
        results.
 
-# NEXT STEPS
+# Remember:
 
-- Brainstorming for independent variables -> difference between years (RDD and DiD) ->
-  observations and maybe motivation. INCLUDE at least some of them into your dataset.
-
-- Protest data from Tina ? (@ Tina: do we have by now indices measuring revolutions,
-  coups d’état, etc.? No, unfortunately we don’t have. I’ll follow up. We also discussed
-  on different indicators (just successful revolutions and coups d’états, or also
-  protests) and if I remember right, @Sergei, you wanted to look into the GDELT and Mass
-  mobilization data Semuhi had suggested).
-
-  1. GDELT:
-     https://blog.gdeltproject.org/mapping-global-protest-trends-1979-2019-through-one-billion-news-articles/
-     A open source database of news articles and search using Google's BigQuery platform
-  1. Mass mobilization data: https://dataverse.harvard.edu/dataverse/MMdata The Mass
-     Mobilization (MM) data are an effort to understand citizen movements against
-     governments, what citizens want when they demonstrate against governments, and how
-     governments respond to citizens. The project codes protests against governments -
-     the data cover 162 countries between 1990 and March 2020. For each protest event,
-     the project records protester demands, government responses, protest location, and
-     protester identities.
-
-- When where the shocks for each country / region?
-
-- Changes for provision: was it one sub-index or a shift between different sub-indexes?
-
-- Try to add the data for 2022 for all three Ps for as many countries as possible.
-
-- Remember:
-
-  - Variance: Do the three indices display existing disparities between different
-    countries? -> check interval / range.
-  - Plausibility: Are the results in line with possible explanations? -> values as in
-    the figures in chapter 4.2.
-  - Consistency between indices: Are the indices scaled in a consistent way? -> compare
-    the 3 Ps respective values as they cover a similar range, and their means and
-    medians are not too different. check also the correlation between each other.
-  - Consistency within indices: Are the components of the three indices (the values of
-    their aspects) consistent, that is, reasonably correlated? -> check correlations of
-    the components for each 3P index.
-  - Consistency with other indices: Are the three indices in line with other indices
-    (i.e. do they fulfil the criterion of “concurrent validity”)? -> check consistency
-    with popular indicators such as per capita income and indices such as the HDI or the
-    Global Peace Index.
-  - Added value: Do the indices add information to other available indicators and
-    indices? -> check which countries are better for each 3P index.
+- Variance: Do the three indices display existing disparities between different
+  countries? -> check interval / range.
+- Plausibility: Are the results in line with possible explanations? -> values as in the
+  figures in chapter 4.2.
+- Consistency between indices: Are the indices scaled in a consistent way? -> compare
+  the 3 Ps respective values as they cover a similar range, and their means and medians
+  are not too different. check also the correlation between each other.
+- Consistency within indices: Are the components of the three indices (the values of
+  their aspects) consistent, that is, reasonably correlated? -> check correlations of
+  the components for each 3P index.
+- Consistency with other indices: Are the three indices in line with other indices (i.e.
+  do they fulfil the criterion of “concurrent validity”)? -> check consistency with
+  popular indicators such as per capita income and indices such as the HDI or the Global
+  Peace Index.
+- Added value: Do the indices add information to other available indicators and indices?
+  -> check which countries are better for each 3P index.
 
 # Done
 
