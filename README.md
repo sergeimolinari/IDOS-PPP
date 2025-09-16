@@ -4,7 +4,6 @@
 
 # SEPTEMBER (NEXT STEPS)
 
-- JORDAN TASK for Markus!
 - Check Ravi’s calculations and steps from 3-2.
 - Adjust WEF file and add new info (Gain info from Markus about data sources).
 - Check Markus’ IMF metadataset and gain info about it!
