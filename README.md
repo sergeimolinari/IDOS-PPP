@@ -4,9 +4,26 @@
 
 # SEPTEMBER (NEXT STEPS)
 
-- Check Ravi’s calculations and steps from 3-2.
-- Adjust WEF file and add new info (Gain info from Markus about data sources).
-- Check Markus’ IMF metadataset and gain info about it!
+- Check Markus’ IMF metadataset and gain info about it! IMF WEO Database: Strengths &
+  Limitations for Competitiveness Analysis\*
+  #### **Strengths**
+  **Comprehensive coverage**: Macroeconomic data for nearly all countries (GDP,
+  inflation, trade, fiscal balances, etc.). **Regular updates**: Released twice a year
+  (April/October) with the latest projections and historical data. **Standardized
+  methodology**: Consistent and transparent data collection, ensuring comparability
+  across countries. **Credible source**: Widely trusted by policymakers, researchers,
+  and financial institutions. **Macroeconomic focus**: Strong on indicators like fiscal
+  deficits, public debt, and current account balances.
+  #### **Limitations**
+  **Not competitiveness-specific**: Lacks detailed indicators like innovation, labor
+  market flexibility, or business environment quality. **Aggregated data**: Mostly
+  national-level aggregates, missing sectoral or regional nuances. **No non-economic
+  factors**: Does not include governance, institutions, or social indicators (e.g.,
+  education, health). **No composite index**: Unlike WEF’s GCI or World Bank’s Doing
+  Business, it does not provide a competitiveness ranking. **Projections vs. actuals**:
+  Future estimates may differ from real outcomes.
+- Adjust WEF file and add new info (change the data sources all together given the
+  unreliability of data sources from WEF?).
 - Construct and INTEGRATE new DATASETS: Excel (first in each corresponding folder, then
   in big dataset) and then Python for REGRESSIONS. Check below for details.
 - Take a look at Tina’s protest datasets. (@ Tina: do we have by now indices measuring
